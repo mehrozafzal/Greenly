@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/home_icon"
+        android:title="@string/home_title"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/history"
+        android:enabled="true"
+        android:icon="@drawable/history_icon"
+        android:title="@string/history"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/retail"
+        android:enabled="true"
+        android:icon="@drawable/retail_icon"
+        android:title="@string/retail_icon_title"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/messages"
+        android:enabled="true"
+        android:icon="@drawable/feed_icon"
+        android:title="@string/inbox"
+        app:showAsAction="ifRoom" />
+
+    <!--    <itemd
+            android:visible="false"
+            android:id="@+id/diary"
+            android:enabled="true"
+            android:icon="@drawable/inspiration_icon"
+            android:title="@string/inspiration"
+            app:showAsAction="ifRoom" />-->
+
+    <item
+        android:id="@+id/compete"
+        android:enabled="true"
+        android:icon="@drawable/ic_trophy"
+        android:title="@string/inspiration"
+        app:showAsAction="ifRoom" />
+
+
+</menu>

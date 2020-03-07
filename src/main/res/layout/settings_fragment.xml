@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="info"
+            type="greenely.greenely.settings.data.SettingsInfo" />
+
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.settings.ui.SettingsViewModel" />
+
+        <variable
+            name="retailState"
+            type="greenely.greenely.retail.models.RetailStateResponseModel" />
+
+        <import type="android.view.View" />
+
+        <import type="greenely.greenely.utils.StringUtils" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="invisible"
+            tools:visibility="visible">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stateListAnimator="@animator/appbar_not_elevated"
+                tools:ignore="UnusedAttribute">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:navigationIcon="@drawable/ic_close_black_24dp"
+                    app:title="@string/settings" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/change_password_progress"
+                style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey17"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/settings_userProfileContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_70sdp"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:id="@+id/settings_imageContainer"
+                            android:layout_width="@dimen/_45sdp"
+                            android:layout_height="@dimen/_45sdp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="@dimen/_15sdp">
+
+                            <RelativeLayout
+                                android:id="@+id/settings_letterContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <com.mikhaellopez.circleview.CircleView
+                                    android:id="@+id/circleView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    app:cv_color="@color/settings_profile_letter_background"
+                                    android:visibility="visible" />
+
+                                <TextView
+                                    android:id="@+id/item_friend_nameTag"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:gravity="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_18ssp"
+                                    android:visibility="visible" />
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:id="@+id/profile_userImage"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="@null"
+                                android:visibility="gone" />
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_toEndOf="@+id/settings_imageContainer"
+                            android:layout_centerVertical="true">
+
+                            <TextView
+                                android:id="@+id/settings_profileUsername"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/_12ssp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:fontFamily="@font/gt_america_light"
+                                android:textColor="@color/black"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/settings_profileUserEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:fontFamily="@font/gt_america_light"
+                                android:textColor="@color/grey2"
+                                android:visibility="visible" />
+
+                            <TextView
+                                android:id="@+id/settings_userProfileEmail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="emailaddress@address.com"
+                                android:textSize="@dimen/_10ssp"
+                                android:layout_marginStart="@dimen/_10sdp"
+                                android:fontFamily="@font/gt_america_medium"
+                                android:textColor="@color/green_3"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                    <TextView
+                        style="@style/SettingHeaderStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Konto" />
+
+                    <LinearLayout
+                        style="@style/SettingLinearLayoutStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{info != null ? View.VISIBLE : View.GONE }"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/email"
+                            android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{info.email}"
+                            android:textAppearance="@style/TextAppearance.SettingItemValue"
+                            tools:text="email" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/change_password"
+                        style="@style/SettingSingleItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/change_password" />
+
+
+                    <LinearLayout
+                        android:id="@+id/redeemCodeContainer"
+                        style="@style/SettingLinearLayoutStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{viewModel.retailStateHandler.isRetailCustomer ? View.GONE : View.VISIBLE }"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/redeemCodeTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/use_activation_code_setting_label"
+                            android:textAppearance="@style/TextAppearance.SettingItem"
+                            android:textStyle="bold"
+                            android:textColor="@color/green_1" />
+
+                        <TextView
+                            android:id="@+id/redeemCodeTitleSub"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/use_activation_code_setting_sub_label"
+                            android:textAppearance="@style/TextAppearance.SettingItemValue"
+                            android:textColor="@color/grey3" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/inviteFriendContainer"
+                        style="@style/SettingLinearLayoutStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="@{retailState.canShowInviteFriends() ? View.VISIBLE : View.GONE }"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/inviteFriendTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/invite_friend_setting_label"
+                            android:textAppearance="@style/TextAppearance.InviteFriendsDisable" />
+
+                        <TextView
+                            android:id="@+id/inviteFriendSubTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/use_activation_code_setting_sub_label"
+                            android:textAppearance="@style/TextAppearance.SettingItemValue"
+                            android:textColor="@color/grey3"
+                            android:textSize="@dimen/size_12_sp" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        style="@style/SettingSingleItem"
+                        android:id="@+id/notificationSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Notifikationer" />
+
+                    <TextView
+                        style="@style/SettingSingleItem"
+                        android:id="@+id/guidanceSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Erbjudanden &amp; artiklar" />
+
+
+                    <TextView
+                        style="@style/SettingHeaderStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BOSTAD" />
+
+
+                    <TextView
+                        android:id="@+id/householdSettings"
+                        style="@style/SettingSingleItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_household" />
+
+                    <TextView
+                        style="@style/SettingHeaderStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/support" />
+
+                    <TextView
+                        android:id="@+id/userAgreement"
+                        style="@style/SettingSingleItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/user_agreement" />
+
+
+                    <TextView
+                        android:id="@+id/logout"
+                        style="@style/SettingSingleItem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/logout" />
+
+
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progress"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="invisible" />
+
+    </FrameLayout>
+</layout>

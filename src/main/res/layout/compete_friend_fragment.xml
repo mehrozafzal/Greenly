@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.competefriend.ui.CompeteFriendViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/competeFriend_topBar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60_dp"
+            android:background="@color/green_3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/compete_friend_title"
+                android:textAppearance="@style/TextAppearance.Title"
+                android:textColor="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/size_20_dp" />
+
+            <RelativeLayout
+                android:id="@+id/competeFriend_settingsIcon"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_gear"
+                    android:layout_marginEnd="@dimen/size_20_dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/competeFriend_onboardingScreenHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/semi_transparent"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/competeFriend_onboardTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/competeFriend_onboardTitleTxt"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.Title3"
+                    android:textSize="@dimen/_25ssp"
+                    android:fontFamily="@font/gt_america_bold"
+                    android:layout_alignParentBottom="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/competeFriend_inviteUserContainer"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/size_40_dp">
+
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:id="@+id/competeFriend_superHeroImage"
+                    android:layout_width="@dimen/_250sdp"
+                    android:layout_height="@dimen/_200sdp"
+                    android:src="@drawable/super_hero"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:id="@+id/competeFriend_subTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/compete_friend_titleTxt"
+                    android:layout_marginTop="@dimen/size_20_dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/size_18_sp"
+                    android:fontFamily="@font/gt_america_bold"
+                    android:layout_below="@+id/competeFriend_superHeroImage"
+                    android:textAppearance="@style/TextAppearance.Body2" />
+
+                <Button
+                    android:id="@+id/competeFriend_inviteUserBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/size_54_dp"
+                    android:layout_marginTop="@dimen/size_30_dp"
+                    android:background="@drawable/green_rounded_button"
+                    android:text="@string/competeFriendList_shareButtonTxt"
+                    android:drawableStart="@drawable/ic_white_plus_circle"
+                    android:drawablePadding="10dp"
+                    android:textAppearance="@style/TextAppearance.Body4"
+                    android:textSize="@dimen/size_18_sp"
+                    android:gravity="center"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:paddingStart="@dimen/_70sdp"
+                    android:paddingEnd="@dimen/_70sdp"
+                    android:layout_below="@+id/competeFriend_subTitle" />
+
+                <TextView
+                    android:id="@+id/competeFriend_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hur funkar det? Läs här!"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/size_20_dp"
+                    android:textSize="@dimen/size_18_sp"
+                    android:textAppearance="@style/TextAppearance.Body4"
+                    android:textColor="@color/new_green"
+                    android:layout_below="@+id/competeFriend_inviteUserBtn"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/competeFriend_listContainer"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="60dp">
+
+            <TextView
+                android:id="@+id/competeFriend_listTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:textAppearance="@style/TextAppearance.Title"
+                android:paddingStart="@dimen/size_20_dp"
+                android:paddingEnd="@dimen/size_20_dp"
+                android:paddingTop="@dimen/size_20_dp" />
+
+            <RadioGroup
+                android:id="@+id/time_resolution"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_16_dp"
+                android:layout_marginBottom="@dimen/size_16_dp"
+                android:paddingStart="@dimen/size_20_dp"
+                android:paddingEnd="@dimen/size_20_dp"
+                android:adjustViewBounds="true"
+                android:orientation="horizontal"
+                app:layout_collapseMode="pin"
+                android:layout_below="@+id/competeFriend_listTitle">
+
+
+                <RadioButton
+                    android:id="@+id/months"
+                    style="@style/Widget.RadioButton.FriendList.Left"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/history_resolution_months"
+                    android:textAllCaps="true"
+                    android:textColor="@color/green_3"
+                    android:textAlignment="center" />
+
+
+                <RadioButton
+                    android:id="@+id/week"
+                    style="@style/Widget.RadioButton.FriendList.Right"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/friends_resolution_week"
+                    android:textAllCaps="true"
+                    android:textColor="@color/green_3"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/competeFriend_rankingListTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/size_20_dp"
+                android:paddingEnd="@dimen/size_20_dp"
+                android:layout_marginTop="@dimen/size_16_dp"
+                android:layout_below="@+id/time_resolution">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/competeFriend_rankingListTitle"
+                    android:textAppearance="@style/TextAppearance.Body4"
+                    android:textSize="@dimen/_10ssp" />
+
+                <RadioGroup
+                    android:id="@+id/kwh_resolution"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:adjustViewBounds="true"
+                    android:orientation="horizontal"
+                    app:layout_collapseMode="pin">
+
+
+                    <RadioButton
+                        android:id="@+id/kwhM2"
+                        style="@style/Widget.RadioButton.FriendList.Left"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:text="@string/kwh_resolution_kwhM2"
+                        android:textAllCaps="false"
+                        android:textColor="@color/green_3"
+                        android:textAlignment="center" />
+
+
+                    <RadioButton
+                        android:id="@+id/kwh"
+                        style="@style/Widget.RadioButton.FriendList.Right"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/_4sdp"
+                        android:paddingBottom="@dimen/_4sdp"
+                        android:textAllCaps="false"
+                        android:text="@string/kwh_resolution_kwh"
+                        android:textColor="@color/green_3"
+                        android:textAlignment="center" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="kWh"
+                    android:textAppearance="@style/TextAppearance.Body2"
+                    android:textSize="@dimen/_11ssp"
+                    android:textColor="@color/green_3" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_below="@+id/competeFriend_rankingListTitle">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/competeFriend_friendsRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/size_10_dp"
+                    tools:listitem="@layout/item_friend_list"
+                    android:layout_alignParentTop="true"
+                    android:layout_above="@+id/competeFriend_rankingListFooterContainer"
+                    android:paddingBottom="@dimen/_20sdp" />
+
+                <FrameLayout
+                    android:visibility="gone"
+                    android:id="@+id/competeFriend_rankingListFooterContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true">
+
+                    <include
+                        android:id="@+id/competeFriend_rankingListFooter"
+                        layout="@layout/item_friend_list_footer" />
+                </FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/competeFriend_onboardingScreenSubHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/semi_transparent"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_above="@+id/competeFriend_onboardScreenHole"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/competeFriend_onboardSubTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/white"
+                    android:textAlignment="center"
+                    android:lineSpacingExtra="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:lines="3"
+                    android:ellipsize="end"
+                    android:lineSpacingMultiplier="1"
+                    android:layout_marginStart="@dimen/_24sdp"
+                    android:layout_marginEnd="@dimen/_24sdp"
+                    android:textAppearance="@style/TextAppearance.Body4" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/competeFriend_onboardScreenHole"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_125sdp"
+                android:layout_below="@+id/time_resolution"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/invite_user_onboard"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="@null"
+                    android:paddingTop="@dimen/_70sdp" />
+
+                <View
+                    android:id="@+id/competeFriend_poaClick"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginBottom="@dimen/_5sdp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/competeFriend_onboardingScreenFooter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/competeFriend_onboardScreenHole"
+                android:background="@color/semi_transparent"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="@dimen/onboardScreen_info_image_width"
+                        android:layout_height="@dimen/onboardScreen_info_image_height"
+                        android:src="@drawable/invite_user_info_image"
+                        android:contentDescription="@null"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:id="@+id/competeFriend_overlayFooterTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/competeFriend_onboardInfoTxt"
+                        android:textColor="@color/white"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Body4"
+                        android:layout_marginTop="@dimen/onboardScreen_info_bottom_text1_margin_top"
+                        android:lineSpacingExtra="@dimen/_2sdp"
+                        android:lineSpacingMultiplier="1" />
+
+                    <TextView
+                        android:id="@+id/competeFriend_notNow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="@string/competeFriend_notNowTxt"
+                        android:textColor="@color/white"
+                        android:textAppearance="@style/TextAppearance.Body4"
+                        android:layout_marginTop="@dimen/onboardScreen_info_bottom_text_margin_top" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loader"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

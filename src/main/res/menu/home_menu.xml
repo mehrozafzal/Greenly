@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/intercom"
+        android:title="@string/chat"
+        android:orderInCategory="1"
+        app:actionLayout="@layout/custom_notification_badge_layout"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_gear_green"
+        android:title="@string/inbox"
+        app:showAsAction="ifRoom" />
+</menu>

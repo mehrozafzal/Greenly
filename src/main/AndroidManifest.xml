@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="greenely.greenely">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        tools:node="remove" />
+
+    <permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <supports-screens android:smallScreens="false" />
+
+    <application
+        android:name=".GreenelyApplication"
+        android:allowBackup="false"
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:icon="${appIcon}"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".home.ui.SwitchProfileActivity"
+            android:theme="@style/AppTheme.Login"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                tools:replace="android:resource" />
+        </provider>
+
+        <activity
+            android:name=".login.ui.LoginActivity"
+            android:label="@string/login"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login"
+            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".registration.ui.RegistrationActivity"
+            android:label="@string/create_account"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".welcome.ui.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".forgotpassword.ForgotPasswordActivity"
+            android:label="@string/forgot_password_title"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".splash.ui.SplashActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login.Splash">
+            <intent-filter android:label="Greenely">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="home"
+                    android:scheme="greenelyapp" />
+                <data
+                    android:host="guidance"
+                    android:scheme="greenelyapp" />
+                <data
+                    android:host="history"
+                    android:scheme="greenelyapp" />
+                <data
+                    android:host="feed"
+                    android:scheme="greenelyapp" />
+                <data
+                    android:host="retail"
+                    android:scheme="greenelyapp" />
+                <data
+                    android:host="compete"
+                    android:scheme="greenelyapp" />
+
+                <!-- Firebase deep links -->
+
+                <data
+                    android:host="stagingapp.greenely.com"
+                    android:scheme="http" />
+                <data
+                    android:host="staginglink.greenely.com"
+                    android:scheme="https" />
+                <data
+                    android:host="link.greenely.com"
+                    android:scheme="http" />
+                <data
+                    android:host="link.greenely.com"
+                    android:scheme="https" />
+                <data
+                    android:host="greenelyalpha2.page.link"
+                    android:scheme="http" />
+                <data
+                    android:host="greenelyalpha2.page.link"
+                    android:scheme="https" />
+                <data
+                    android:host="greenely.page.link"
+                    android:scheme="http" />
+                <data
+                    android:host="greenely.page.link"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.ui.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".EmptyActivity"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".history.views.HistoryMonthActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".solaranalysis.ui.householdinfo.SolarAnalysisActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".settings.faq.ui.FaqActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".signature.ui.SignatureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".guidance.ui.ArticleDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".guidance.ui.OfferDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".guidance.ui.TipsDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".signature.ui.SignatureDoneActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".utils.pdfview.PdfViewer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".guidance.ui.latestsolaranalysis.LatestSolarAnalysisActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+        <activity
+            android:name=".splash.ui.IntroductionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login.Splash" />
+        <activity
+            android:name=".setuphousehold.ui.SetupHouseholdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".utils.pdfview.PdfWebView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".utils.pdfview.PdfRendererView"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Login"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".retailonboarding.ui.RetailOnboardingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".retailinvite.ui.RetaiInviteActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".feed.ui.CostAnalysisInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".competefriend.ui.InfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Main" />
+
+        <receiver
+            android:name="com.appsflyer.MultipleInstallBroadcastReceiver"
+            android:exported="true"
+            tools:ignore="ExportedReceiver">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".push.NotificationDismissedReceiver"
+            android:exported="false" />
+
+        <service android:name=".push.PushListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".push.PushIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".push.PushInstanceIdListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".push.PushRegistrationIntentService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".solaranalysis.data.SendContactInfoIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+    </application>
+
+</manifest>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.history.HistoryViewModel"/>
+
+        <import type="greenely.greenely.utils.StringUtils"/>
+    </data>
+
+
+
+        <FrameLayout
+            android:paddingTop="@dimen/size_10_dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consumption_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="@dimen/size_10_dp"
+                tools:visibility="visible">
+
+
+                <RelativeLayout
+                    android:id="@+id/chartsContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    tools:minHeight="192dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+
+
+                <RadioGroup
+                    app:layout_constraintTop_toBottomOf="@id/chartsContainer"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintLeft_toRightOf="parent"
+                    android:id="@+id/chartSelector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="16dp"
+                    android:adjustViewBounds="true"
+                    android:orientation="horizontal"
+                    app:layout_collapseMode="pin">
+
+
+                    <RadioButton
+                        android:id="@+id/totalChart"
+                        style="@style/Widget.RadioButton.History2"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/total_label"
+                        android:textAlignment="center" />
+
+                    <RadioButton
+                        android:id="@+id/temperatureChart"
+                        style="@style/Widget.RadioButton.History2"
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:gravity="center"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/temperature_label"
+                        android:textAlignment="center" />
+
+                    <RadioButton
+                        android:id="@+id/priceChart"
+                        style="@style/Widget.RadioButton.History2"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="@string/price_label"
+                        android:textAlignment="center" />
+
+                </RadioGroup>
+
+                <TextView
+                    app:layout_constraintTop_toBottomOf="@id/chartsContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textColor="@color/white"
+                    android:paddingLeft="9dp"
+                    android:paddingBottom="3dp"
+                    android:paddingTop="3dp"
+                    android:layout_marginEnd="22dp"
+                    android:paddingRight="9dp"
+                    android:gravity="center"
+                    android:background="@drawable/yellow_rounded_background"
+                    android:textSize="8sp"
+                    android:textAppearance="@style/TextAppearance.MediumSanSerif"
+                    android:text="Nytt!"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </FrameLayout>
+</layout>

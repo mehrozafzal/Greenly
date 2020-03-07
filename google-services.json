@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "145017322928",
+    "firebase_url": "https://greenelysbab.firebaseio.com",
+    "project_id": "greenelysbab",
+    "storage_bucket": "greenelysbab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:145017322928:android:b29efe537b4f39ab",
+        "android_client_info": {
+          "package_name": "greenely.greenely"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145017322928-e3mjtjudi0doljbpbejphn8mm9ntg0be.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsCTv-Ywae_ZQRqUw3_8oUAJYpgEzWjZs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+     {
+      "client_info": {
+        "mobilesdk_app_id": "1:145017322928:android:3a39e5af0f89ec1e",
+        "android_client_info": {
+          "package_name": "greenely.greenely.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "145017322928-e3mjtjudi0doljbpbejphn8mm9ntg0be.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsCTv-Ywae_ZQRqUw3_8oUAJYpgEzWjZs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

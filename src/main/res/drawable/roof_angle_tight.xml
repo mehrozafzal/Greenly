@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="112dp"
+    android:viewportWidth="128"
+    android:viewportHeight="112">
+
+    <group
+        android:translateX="80">
+        <path
+            android:fillColor="#FFF"
+            android:pathData="M0 0v32h20V0z" />
+        <path
+            android:strokeColor="#000"
+            android:strokeAlpha=".88"
+            android:strokeWidth="2"
+            android:pathData="M1 1v30h18V1H1z" />
+    </group>
+    <group
+        android:translateX="80">
+        <path
+            android:fillColor="#FFF"
+            android:pathData="M1 4h18v4H1z" />
+        <path
+            android:strokeColor="#000"
+            android:strokeAlpha=".88"
+            android:strokeWidth="1"
+            android:pathData="M1.5 4.5h17v3h-17z" />
+    </group>
+    <group
+        android:translateX="20"
+        android:translateY="12">
+        <path
+            android:fillColor="#FFF"
+            android:pathData="M0 100h88V1L44 0 0 1z" />
+        <path
+            android:strokeColor="#000"
+            android:strokeAlpha=".88"
+            android:strokeWidth="2"
+            android:pathData="M1 99h86V1.978L44.023 1 1 1.978V99z" />
+    </group>
+    <path
+        android:strokeColor="#000"
+        android:strokeAlpha=".88"
+        android:strokeWidth="1"
+        android:pathData="M24.5 13.5h1v98h-1zM103.5 13.5h1v98h-1z" />
+    <path
+        android:fillColor="#FFF"
+        android:pathData="M64 0L0 8v16l64-8 64 8V8z" />
+    <path
+        android:fillColor="#1CAA2F"
+        android:fillAlpha=".08"
+        android:pathData="M64 0L0 8v16l64-8 64 8V8z" />
+    <path
+        android:fillColor="#1CAA2F"
+        android:fillAlpha=".08"
+        android:pathData="M64 0L0 8v16l64-8 64 8V8z" />
+    <path
+        android:strokeColor="#979797"
+        android:strokeWidth="1"
+        android:pathData="M64 0.504L0.5 8.44v14.993l63.438-7.93h0.124l63.438 7.93V8.44L64 0.504z" />
+    <path
+        android:strokeColor="#1CAA2F"
+        android:strokeWidth="2"
+        android:pathData="M64 1.008L1 8.883v13.984l63-7.875 63 7.875V8.883L64 1.008z" />
+    <path
+        android:strokeColor="#1CAA2F"
+        android:strokeWidth="1"
+        android:pathData="M0 20l64-8 64 8" />
+</vector>

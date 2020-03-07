@@ -1,0 +1,7 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners
+        android:bottomLeftRadius="@dimen/friend_radio_button_corner_radius"
+        android:topLeftRadius="@dimen/friend_radio_button_corner_radius" />
+    <solid android:color="@color/history_radio_button_color" />
+</shape>

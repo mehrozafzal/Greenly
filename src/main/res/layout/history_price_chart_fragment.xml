@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="headerModel"
+            type="greenely.greenely.history.models.HeaderModel"/>
+        <variable
+            name="viewModel"
+            type="greenely.greenely.history.HistoryViewModel"/>
+
+        <import type="android.view.View" />
+
+        <import type="greenely.greenely.utils.StringUtils"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/temperature"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/price_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                tools:visibility="visible">
+
+
+                <include
+                    android:layout_marginTop="@dimen/size_10_dp"
+                    android:visibility="@{viewModel.retailStateHandler.shouldPromoteRetail  ? View.VISIBLE : View.GONE}"
+                    android:id="@+id/snackbar_container"
+                    android:layout_width="match_parent"
+                    tools:visibility="gone"
+                    android:layout_height="wrap_content"
+                    layout="@layout/snack_bar_history"
+                    />
+
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{headerModel.priceHeaderText}"
+                    tools:text="@string/temperature_header_text"
+                    android:textAppearance="@style/TextAppearance.Body5"
+                    app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@id/snackbar_container"/>
+
+                <view
+                    class="com.github.mikephil.charting.charts.CombinedChart"
+                    android:id="@+id/price_chart"
+                    android:layout_width="0dp"
+                    android:layout_height="192dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="0dp"/>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="öre/kWh"
+                    android:layout_marginTop="16dp"
+                    android:textSize="11sp"
+                    android:textAppearance="@style/TextAppearance.LightSanSerif"
+                    android:textColor="@color/grey21"
+                    app:layout_constraintTop_toBottomOf="@+id/textView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="18dp"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/price_progress"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                tools:visibility="invisible"/>
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

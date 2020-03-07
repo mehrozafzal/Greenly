@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.signature.ui.SignatureViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/white"
+            android:stateListAnimator="@animator/appbar_not_elevated">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="pin">
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_above="@+id/btnSignWithBankId"
+            android:layout_below="@+id/appbar"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingLeft="@dimen/size_26_dp"
+                android:paddingRight="@dimen/size_26_dp">
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8_dp"
+                    android:gravity="start"
+                    android:text="@string/verify_information"
+                    android:textAppearance="@style/TextAppearance.Heading1"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8_dp"
+                    android:gravity="start"
+                    android:text="@string/please_confirm_information"
+                    android:textAppearance="@style/TextAppearance.SubHeading1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintTop_toBottomOf="@id/titleTextView" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/confirmationStepRecyclerView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bordered_rounded"
+                    android:paddingLeft="@dimen/size_26_dp"
+                    android:paddingTop="@dimen/size_10_dp"
+                    android:layout_marginTop="@dimen/size_16_dp"
+                    android:elevation="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:paddingRight="@dimen/size_26_dp"
+                    android:paddingBottom="@dimen/size_10_dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/descriptionTextView"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/signature_confirmation_rec_view_item">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+
+                <LinearLayout
+                    android:id="@+id/switchContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="65dp"
+                    android:gravity="top"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/confirmationStepRecyclerView"
+                    app:layout_constraintVertical_bias="0.2">
+
+                    <TextView
+                        android:id="@+id/powerOfAttorneyTerms"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"
+                        android:layout_gravity="top"
+                        android:layout_marginRight="@dimen/size_10_dp"
+                        android:textColor="@color/grey3"
+                        android:text="@string/poa_power_of_attorney_accept"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textSize="@dimen/size_14_sp" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/powerOfAttorneyToggle"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="@dimen/size_10_dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="0.2"
+                        android:thumb="@drawable/switch_custom_thumb"
+                        app:switchMinWidth="40dp"
+                        app:track="@drawable/switch_control" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btnSignWithBankId"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60_dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/new_green"
+            android:text="@string/sign_with_bankid"
+            android:textAppearance="@style/TextAppearance.BoldSanSerif"
+            android:textColor="@color/white"
+            android:textSize="@dimen/size_18_sp" />
+
+    </RelativeLayout>
+</layout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#333333</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="customer">#ff5c50</color>
+
+    <color name="flat_button_select_color">#50999999</color>
+    <color name="accent">#1caa2f</color>
+    <color name="temperature">#03a94f</color>
+    <color name="app_background">#F6F6F6</color>
+    <color name="estimated_background">#CFCFCF</color>
+
+    <color name="semi_circle_background">#e7e7e7</color>
+    <color name="semi_circle_circle_background">#d7d7d7</color>
+
+    <color name="meter_current">#5c8130</color>
+    <color name="meter_potential">#a0c527</color>
+    <color name="meter_tick">#dedede</color>
+    <color name="meter_marker">#333333</color>
+
+    <color name="consumption_me">#03a9f4</color>
+    <color name="consumption_top">#ffc107</color>
+    <color name="consumption_others">#4caf50</color>
+    <color name="consumption_me_selected">#1976d2</color>
+    <color name="price">#fdd835</color>
+
+    <color name="consumption_history_selected">#0D47A1</color>
+    <color name="consumption_history_unselected">#2196F3</color>
+    <color name="consumption_history_estimated_color">#CFCFCF</color>
+    <color name="consumption_history_estimated_selected_color">#1976D2</color>
+
+    <color name="signature_progress">#ff5c50</color>
+    <color name="signature_done">#AFCB37</color>
+
+    <color name="check_box_checked">#AFCB37</color>
+    <color name="check_box_unchecked">#999999</color>
+
+    <color name="text_primary">#333333</color>
+    <color name="text_secondary">#999999</color>
+</resources>

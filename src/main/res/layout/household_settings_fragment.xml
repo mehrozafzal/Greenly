@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="household"
+            type="greenely.greenely.settings.data.Household" />
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.settings.ui.SettingsViewModel" />
+
+
+        <import type="android.view.View" />
+
+        <import type="greenely.greenely.utils.StringUtils" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:background="@color/grey17"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:stateListAnimator="@animator/appbar_not_elevated"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                app:title="Mitt hushåll"
+                android:layout_height="?android:attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_green" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            app:layout_constraintTop_toBottomOf="@id/app_bar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/SettingHeaderStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BOSTAD" />
+
+                <LinearLayout
+                    android:id="@+id/changeParameterContainer"
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_marginTop="@dimen/size_10_dp"
+                        android:layout_marginBottom="@dimen/size_10_dp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/change_household_parameters"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        app:srcCompat="@drawable/ic_right_arrow_green" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/municipality"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{household.municipality}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="Kommun" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/facility_type"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{household.facilityType}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="facility_type" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/facility_area_setting_label"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{household.facilityArea}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="facility_area_setting_label" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{household.constructionYear != null ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/construction_year"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{household.constructionYear}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="construction_year" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{household.meter != null ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/facility_id_setting_label"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{household.meter}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="facility_id" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/SettingHeaderStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/household" />
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{household.electricCarCount != null ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/car_count_label"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{household.electricCarCount}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="car_count" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/occupants"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{household.occupants}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="occupants" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/SettingHeaderStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/heating_type"
+                    android:visibility="@{household.heatingType != null || household.secondaryHeatingType != null || household.tertiaryHeatingType != null || household.quaternaryHeatingType != null ? View.VISIBLE : View.GONE}" />
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{household.heatingType != null ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/primary_heating_type"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{StringUtils.upperFirst(household.heatingType)}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="primary_heating_type" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{household.secondaryHeatingType != null ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secondary_heating_type"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{StringUtils.upperFirst(household.secondaryHeatingType)}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="secondary_heating_type" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{household.tertiaryHeatingType != null ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secondary_heating_type"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{StringUtils.upperFirst(household.tertiaryHeatingType)}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="secondary_heating_type" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    style="@style/SettingLinearLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{household.quaternaryHeatingType != null ? View.VISIBLE : View.GONE}">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/secondary_heating_type"
+                        android:textAppearance="@style/TextAppearance.SettingItem" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{StringUtils.upperFirst(household.quaternaryHeatingType)}"
+                        android:textAppearance="@style/TextAppearance.SettingItemValue"
+                        tools:text="secondary_heating_type" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="invisible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

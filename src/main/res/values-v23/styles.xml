@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.Login">
+        <item name="toolbarStyle">@style/Widget.Toolbar.Login</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorButtonNormal">?attr/colorAccent</item>
+        <item name="android:buttonStyle">@style/Widget.Button.Borderless.Login</item>
+        <item name="android:editTextStyle">@style/Widget.EditText.Login</item>
+        <item name="android:radioButtonStyle">@style/Widget.RadioButton.Login</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorPrimaryDark">?attr/colorPrimary</item>
+        <item name="android:buttonBarButtonStyle">
+            @style/Widget.Button.Borderless.Login.AlertDialog
+        </item>
+    </style>
+</resources>

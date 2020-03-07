@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="done" type="id" />
+    <item name="undo" type="id" />
+    <item name="bar" type="id" />
+    <item name="drawActionsChangeListener" type="id"/>
+    <item name="selectedStepListener" type="id"/>
+</resources>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="signature_stroke_width">3dp</dimen>
+    <dimen name="dynamic_bar_width">58dp</dimen>
+    <dimen name="radio_margin">8dp</dimen>
+    <dimen name="radio_height">48dp</dimen>
+    <dimen name="doughnut_section_stroke_width">1dp</dimen>
+    <dimen name="radio_compound_padding">16dp</dimen>
+    <dimen name="dynamic_bar_line_width">5dp</dimen>
+    <dimen name="separator_line">1dp</dimen>
+    <dimen name="meter_line_length">10dp</dimen>
+    <dimen name="meter_line_stroke_width">4dp</dimen>
+    <dimen name="recurring_card_offset">5dp</dimen>
+    <dimen name="recurring_card_elevation">2dp</dimen>
+    <dimen name="flat_meter_height">24dp</dimen>
+    <dimen name="chart_label_text_size">14sp</dimen>
+    <dimen name="axis_label_padding">8dp</dimen>
+    <dimen name="axis_frame_width">8dp</dimen>
+    <dimen name="line_stroke_width">1dp</dimen>
+    <dimen name="bar_padding">4dp</dimen>
+    <dimen name="line_selector_radius">5dp</dimen>
+    <dimen name="bar_corner_radius">2dp</dimen>
+    <dimen name="tool_tip_text_size">16sp</dimen>
+    <dimen name="pager_bullet_indicator_active_dot_diameter">8dp</dimen>
+    <dimen name="pager_bullet_indicator_inactive_dot_diameter">8dp</dimen>
+
+
+    <dimen name="text_size_header_1">13sp</dimen>
+
+    <dimen name="snackbar_header_text">16sp</dimen>
+    <dimen name="snackbar_sub_text">14sp</dimen>
+    <dimen name="snackbar_button_padding_vertical">9dp</dimen>
+    <dimen name="snackbar_button_padding_horizontal" tools:ignore="MissingDefaultResource">16dp
+    </dimen>
+
+
+    <dimen name="feed_item_radius">15dp</dimen>
+    <dimen name="feed_item_margin">20dp</dimen>
+    <dimen name="feed_item_margin_vertical">8dp</dimen>
+    <dimen name="feed_bar_with">3dp</dimen>
+
+    <dimen name="legend_text_size">12sp</dimen>
+
+    <dimen name="home_radio_button_corner_radius">6dp</dimen>
+    <dimen name="history_radio_button_corner_radius">20dp</dimen>
+    <dimen name="history_top_radio_button_corner_radius">6dp</dimen>
+    <dimen name="friend_radio_button_corner_radius">4dp</dimen>
+
+
+    <dimen name="retail_dialog_list_label_title_size">16sp</dimen>
+    <dimen name="retail_dialog_list_label_subtitle_size">14sp</dimen>
+    <dimen name="retail_dialog_list_label_subtitle_margin_start">37dp</dimen>
+    <dimen name="retail_dialog_list_label_title_margin_start">16dp</dimen>
+    <dimen name="retail_start_list_row_margin_top">22dp</dimen>
+    <dimen name="retail_start_list_subtitle_margin_top">2dp</dimen>
+
+    <dimen name="retail_dialog_list_row_margin_top">16dp</dimen>
+    <dimen name="retail_start_view_padding">24dp</dimen>
+
+
+    <dimen name="retail_start_list_label_title_size">16sp</dimen>
+    <dimen name="retail_start_list_label_subtitle_size">16sp</dimen>
+
+    <dimen name="heading_1">33sp</dimen>
+    <dimen name="heading_2">28sp</dimen>
+
+
+    <dimen name="sub_heading_1">18sp</dimen>
+
+
+    <dimen name="size_5_dp">5dp</dimen>
+    <dimen name="size_45_dp">45dp</dimen>
+    <dimen name="size_40_dp">40dp</dimen>
+    <dimen name="size_24_dp">24sp</dimen>
+    <dimen name="size_20_dp">20dp</dimen>
+    <dimen name="size_16_dp">16dp</dimen>
+    <dimen name="size_35_dp">35dp</dimen>
+    <dimen name="size_10_dp">10dp</dimen>
+    <dimen name="size_28_dp">28dp</dimen>
+    <dimen name="size_30_dp">30dp</dimen>
+    <dimen name="size_54_dp">54dp</dimen>
+    <dimen name="size_36_dp">36dp</dimen>
+    <dimen name="size_14_dp">14dp</dimen>
+
+    <dimen name="size_60_dp">60dp</dimen>
+    <dimen name="size_26_dp">26dp</dimen>
+    <dimen name="size_8_dp">8dp</dimen>
+
+
+    <dimen name="size_12_sp">12sp</dimen>
+    <dimen name="size_14_sp">14sp</dimen>
+    <dimen name="size_18_sp">18sp</dimen>
+    <dimen name="size_20_sp">20sp</dimen>
+    <dimen name="size_22_sp">22sp</dimen>
+    <dimen name="size_17_sp">17sp</dimen>
+    <dimen name="size_16_sp">16sp</dimen>
+    <dimen name="size_15_sp">15sp</dimen>
+    <dimen name="size_35_sp">35sp</dimen>
+    <dimen name="size_38_dp">38dp</dimen>
+
+
+    <dimen name="size_5_sp">5sp</dimen>
+    <dimen name="size_45_sp">45sp</dimen>
+    <dimen name="size_40_sp">40sp</dimen>
+    <dimen name="size_24_sp">24sp</dimen>
+    <dimen name="size_54_sp">54sp</dimen>
+    <dimen name="size_36_sp">36sp</dimen>
+    <dimen name="size_60_sp">60sp</dimen>
+    <dimen name="size_10_sp">10sp</dimen>
+    <dimen name="size_28_sp">28sp</dimen>
+    <dimen name="size_30_sp">30sp</dimen>
+    <dimen name="size_26_sp">26sp</dimen>
+    <dimen name="size_8_sp">8sp</dimen>
+
+
+    <dimen name="screen_width">475dp</dimen>
+    <dimen name="marker_view_width">80dp</dimen>
+    <dimen name="circle_chart_width">85dp</dimen>
+
+    //Welcome
+    <dimen name="welcome_logo">40dp</dimen>
+
+    //onboarding screen
+    <dimen name="onboardScreen_margin_bottom">50dp</dimen>
+    <dimen name="onboardScreen_info_image_width">250dp</dimen>
+    <dimen name="onboardScreen_info_image_height">150dp</dimen>
+    <dimen name="onboardScreen_info_bottom_text_margin_top">20dp</dimen>
+    <dimen name="onboardScreen_info_bottom_text1_margin_top">15dp</dimen>
+
+
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_60_dp"
+        android:background="@color/white">
+
+
+        <RelativeLayout
+            android:id="@+id/item_friend_badgeView"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/item_friend_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/item_friend_badge_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="-"
+                android:lines="1"
+                android:ellipsize="end"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:visibility="visible"
+            android:id="@+id/item_friend_imageContainer"
+            android:layout_width="@dimen/_28sdp"
+            android:layout_height="@dimen/_28sdp"
+            android:layout_toEndOf="@+id/item_friend_badgeView"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/size_5_dp">
+
+            <RelativeLayout
+                android:id="@+id/item_friend_tagContainer"
+                android:layout_width="@dimen/_28sdp"
+                android:layout_height="@dimen/_28sdp"
+                android:visibility="gone">
+
+                <com.mikhaellopez.circleview.CircleView
+                    android:id="@+id/circleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:cv_color="#3f51b5" />
+
+                <TextView
+                    android:id="@+id/item_friend_nameTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_13ssp" />
+            </RelativeLayout>
+
+
+            <ImageView
+                android:visibility="gone"
+                android:id="@+id/item_friend_userProfileImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null" />
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/item_friend_name"
+            android:layout_width="@dimen/_110sdp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/item_friend_imageContainer"
+            android:layout_marginStart="@dimen/size_10_dp"
+            android:textSize="@dimen/_11ssp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:fontFamily="sans-serif"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/item_friend_kwh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textAppearance="@style/TextAppearance.Body2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/size_20_dp"
+            android:textColor="@color/green_3"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/item_friend_inviteFriend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textAppearance="@style/TextAppearance.Body2"
+            android:fontFamily="sans-serif"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/size_20_dp"
+            android:textColor="@color/green_3"
+            android:visibility="gone"
+            android:background="@drawable/sign_poa_button"
+            android:text="@string/fetch_data"
+            android:textAllCaps="true"
+            android:padding="8dp" />
+
+    </RelativeLayout>
+
+</layout>

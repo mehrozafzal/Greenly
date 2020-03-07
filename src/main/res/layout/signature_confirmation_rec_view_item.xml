@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/greenTick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/size_10_dp"
+        android:layout_marginEnd="22dp"
+        app:srcCompat="@drawable/green_tick" />
+
+    <TextView
+        android:id="@+id/personNumerLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
+        android:layout_toEndOf="@id/greenTick"
+        android:gravity="start"
+        android:textAppearance="@style/TextAppearance.MediumSanSerif"
+        android:textColor="@color/grey14"
+        tools:text="Personnummer"
+        android:textSize="@dimen/size_14_sp" />
+
+    <TextView
+        android:id="@+id/personNumerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/personNumerLabelTextView"
+        android:textAppearance="@style/TextAppearance.LightSanSerif"
+        android:layout_toEndOf="@id/greenTick"
+        android:gravity="start"
+        android:textColor="@color/black_1"
+        android:textSize="@dimen/size_18_sp"
+        tools:text="199309191238558" />
+
+</RelativeLayout>
+
+
+

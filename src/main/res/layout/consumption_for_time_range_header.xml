@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress AndroidElementNotAllowed -->
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="greenely.greenely.views.ConsumptionForTimeRangeHeader.Model"/>
+    </data>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            tools:context=".MainActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/timeRangeUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text='@{model.timeRangeUnit, default=""}'
+                android:textAppearance="@style/TextAppearance.Caption"
+                app:layout_constraintBottom_toTopOf="@+id/timeRange"
+                app:layout_constraintEnd_toStartOf="@+id/consumptionUnit"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Månad"/>
+
+            <TextView
+                android:id="@+id/consumptionUnit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Elanvändning"
+                android:textAppearance="@style/TextAppearance.Caption"
+                app:layout_constraintBottom_toTopOf="@+id/consumption"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/timeRangeUnit"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Elanvändning"/>
+
+            <TextView
+                android:id="@+id/timeRange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginStart="16dp"
+                android:text='@{model.timeRange, default=""}'
+                android:textAppearance="@style/TextAppearance.Title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/consumption"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/timeRangeUnit"
+                tools:text="September"/>
+
+            <TextView
+                android:id="@+id/consumption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:text='@{model.consumption, default=""}'
+                android:textAppearance="@style/TextAppearance.Title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/timeRange"
+                app:layout_constraintTop_toBottomOf="@+id/consumptionUnit"
+                tools:text="265 kWh"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

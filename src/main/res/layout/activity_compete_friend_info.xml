@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="activity"
+            type="greenely.greenely.competefriend.ui.InfoActivity" />
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/size_20_dp"
+        android:layout_marginEnd="@dimen/size_20_dp"
+        android:layout_marginTop="@dimen/size_20_dp">
+
+        <ImageView
+            android:id="@+id/competeFriendInfo_close"
+            android:layout_width="@dimen/size_35_dp"
+            android:layout_height="@dimen/size_35_dp"
+            app:srcCompat="@drawable/ic_close_green"
+            android:layout_gravity="end" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Att bjuda in sina\nvänner"
+            android:textAppearance="@style/TextAppearance.Title1"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:text="@string/activityCompeteFriend_infoTxt"
+            android:textAppearance="@style/TextAppearance.Body4"
+            android:fontFamily="@font/gt_america_light"
+            android:layout_marginTop="@dimen/size_10_dp"
+            android:textColor="@color/grey3"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:lineSpacingMultiplier="1"/>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="greenely.greenely.home.ui.SwitchProfileActivity">
+
+        <TextView
+            android:id="@+id/switchProfile_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Lägg till konto"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textSize="@dimen/_14ssp"
+            android:fontFamily="@font/gt_america_light"
+            android:textColor="@color/jetBlack" />
+
+        <ImageView
+            android:id="@+id/switchProfile_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:padding="10dp"
+            android:src="@drawable/ic_close_green"/>
+
+        <TextView
+            android:id="@+id/switchProfile_subTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vill du se data för fler bostäder?"
+            app:layout_constraintTop_toBottomOf="@+id/switchProfile_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:fontFamily="@font/gt_america_bold"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/jetBlack" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skapa ett nytt Greenely-konto eller logga in med ett av dina andra konton. "
+            app:layout_constraintTop_toBottomOf="@+id/switchProfile_subTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textAlignment="center"
+            android:fontFamily="@font/gt_america_light"
+            android:textSize="@dimen/_15ssp"
+            android:textColor="@color/grey3" />
+
+
+        <TextView
+            android:id="@+id/switchProfile_createNewAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SKAPA NYTT KONTO"
+            android:textAlignment="center"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            android:background="@drawable/green_rounded_button"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="@dimen/_35sdp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gt_america_medium"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            android:id="@+id/switchProfile_addAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LÄGG TILL KONTO SOM REDAN FINNS"
+            android:textAlignment="center"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switchProfile_createNewAccount"
+            android:background="@drawable/bordered_green_with_corner2"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textColor="@color/new_green"
+            android:fontFamily="@font/gt_america_medium"
+            android:textSize="@dimen/_11ssp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

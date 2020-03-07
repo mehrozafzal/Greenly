@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Greenely</string>
+
+    <string name="gcm_sender_id">145017322928</string>
+
+    <string name="welcome_appname">Välkommen till\nGreenely</string>
+    <string name="welcome_message">
+        Vi gör ditt energibeteende synligt och hjälper dig bli mer energismart
+    </string>
+
+    <string name="release_write_key">6VRczFaC4kSWOLZT6d3t4QWrs11Rrukj</string>
+    <string name="if_you_still_need_help">
+        Om du fortfarande behöver hjälp så klicka "Ja" för att skicka ett mail till
+        support@greenely.se
+    </string>
+
+    <string name="support_email">
+        support@greenely.se
+    </string>
+    <string name="facebook_app_id">360979667613542</string>
+</resources>
+

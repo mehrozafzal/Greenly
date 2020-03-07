@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+
+        <include
+            android:id="@+id/container"
+            layout="@layout/common_list_view"
+            app:layout_constraintBottom_toTopOf="@id/containerLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/containerLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/size_24_dp"
+            android:layout_marginStart="@dimen/size_24_dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container"
+            app:layout_constraintVertical_bias="0.8">
+
+
+            <TextView
+                android:id="@+id/btnPromoCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/have_invitation_code_label"
+                android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold.Green"
+                android:textSize="@dimen/size_18_sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnContinue"
+                style="@style/Widget.Button.Continue"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/size_30_dp"
+                android:layout_marginRight="@dimen/size_10_dp"
+                android:layout_marginLeft="@dimen/size_10_dp"
+                android:layout_marginBottom="@dimen/size_16_dp"
+                android:text="@string/continue_label_2" />
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

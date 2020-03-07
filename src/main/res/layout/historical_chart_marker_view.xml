@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="greenely.greenely.home.ui.historicalcomparison.MarkerObject" />
+
+
+    </data>
+
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvMe"
+            android:elevation="10dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2.5dp"
+            android:background="@drawable/green_rounded_background"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textAppearance="@style/TextAppearance.HistoricalComparisonMarkerView"
+            tools:text="101 Kb" />
+
+        <TextView
+            android:id="@+id/tvOthers"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/yellow_rounded_background"
+            android:gravity="center"
+            android:padding="5dp"
+            android:elevation="10dp"
+
+            android:layout_marginTop="2.5dp"
+            android:layout_marginBottom="2.5dp"
+            android:textAppearance="@style/TextAppearance.HistoricalComparisonMarkerView"
+            tools:text="101 Kb" />
+
+
+        <TextView
+            android:id="@+id/tvBest"
+            android:layout_marginTop="2.5dp"
+            android:layout_width="80dp"
+            android:elevation="10dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_rounded_background"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textAppearance="@style/TextAppearance.HistoricalComparisonMarkerView"
+            tools:text="101 Kb" />
+
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.retailonboarding.ui.RedeemCodeViewModel"/>
+
+        <import type="android.view.View"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayoutContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:stateListAnimator="@animator/appbar_not_elevated">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/transparent"
+                        app:layout_collapseMode="pin">
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll"
+                android:fillViewport="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:paddingRight="26dp"
+                        android:paddingLeft="16dp"
+                        android:paddingBottom="16dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/redeem_code_label"
+                        android:textAppearance="@style/TextAppearance.Display9"
+                        android:textColor="@color/black_1"
+                        android:gravity="left"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/redeem_description"
+                        android:layout_width="match_parent"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/redeem_code_description"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textSize="19sp"
+                        android:gravity="left"
+                        app:autoSizeTextType="uniform"
+                        android:textColor="@color/grey3"
+                        app:layout_constraintTop_toBottomOf="@id/title"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/textInputLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="16dp"
+                        app:errorEnabled="true"
+                        app:error="@{viewModel.errors.promocodeError}"
+                        app:layout_constraintVertical_bias="0.3"
+                        app:layout_constraintTop_toBottomOf="@id/redeem_description"
+                        app:layout_constraintBottom_toTopOf="@id/btn_redeem_code"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:hintTextAppearance="@style/HintTextStyle"
+                        app:layout_constraintRight_toRightOf="parent"
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edtRedeemCode"
+                            android:textSize="17sp"
+                            android:imeOptions="actionDone"
+                            android:imeActionLabel="Done"
+                            android:layout_width="match_parent"
+                            android:maxLines="1"
+                            android:onTextChanged="@{viewModel.validationTextWatcher}"
+                            android:singleLine="true"
+                            android:text="@={viewModel.promocodeData.promocode}"
+                            android:layout_height="wrap_content"
+                            android:hint="@string/redeem_code_hint"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_redeem_code"
+                        style="@style/Widget.Button.Register"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:elevation="20dp"
+                        android:background="@color/new_green"
+                        android:padding="16dp"
+                        android:text="@string/redeem_code_button_label"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.GreenButton"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        />
+
+                    <LinearLayout
+                        android:id="@+id/loader"
+                        style="@style/Widget.Button.Register"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:elevation="20dp"
+                        android:padding="5dp"
+                        android:background="@color/new_green"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent">
+
+                        <androidx.core.widget.ContentLoadingProgressBar
+                            android:indeterminateDrawable="@drawable/white_progress_bar"
+                            style="@style/Widget.AppCompat.ProgressBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            tools:visibility="visible" />
+
+                    </LinearLayout>
+
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

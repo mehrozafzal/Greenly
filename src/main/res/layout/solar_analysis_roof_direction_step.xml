@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.solaranalysis.ui.householdinfo.SolarAnalysisViewModel"/>
+    </data>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <RadioGroup
+                android:id="@+id/directionOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="horizontal"
+                android:checkedButton="@={viewModel.householdInfo.roofDirectionId}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_default="wrap"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="1.0">
+
+
+                <org.grunkspin.subtitleradiobutton.SubtitleRadioButton
+                    android:id="@+id/west"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                    android:textAlignment="center"
+                    app:subtitleText="@string/west"
+                    app:subtitleTextAppearance="@style/TextAppearance.Body1"
+                    app:titleText="@string/west_label"
+                    app:titleTextAppearance="@style/TextAppearance.Body3" />
+
+                <org.grunkspin.subtitleradiobutton.SubtitleRadioButton
+                    android:id="@+id/southWest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                    android:padding="8dp"
+                    android:textAlignment="center"
+                    app:subtitleText="@string/south_west"
+                    app:subtitleTextAppearance="@style/TextAppearance.Body1"
+                    app:titleText="@string/south_west_label"
+                    app:titleTextAppearance="@style/TextAppearance.Body3" />
+
+                <org.grunkspin.subtitleradiobutton.SubtitleRadioButton
+                    android:id="@+id/south"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                    app:subtitleText="@string/south"
+                    app:subtitleTextAppearance="@style/TextAppearance.Body1"
+                    app:titleText="@string/south_label"
+                    app:titleTextAppearance="@style/TextAppearance.Body3" />
+
+                <org.grunkspin.subtitleradiobutton.SubtitleRadioButton
+                    android:id="@+id/southEast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                    app:subtitleText="@string/south_east"
+                    app:subtitleTextAppearance="@style/TextAppearance.Body1"
+                    app:titleText="@string/south_east_label"
+                    app:titleTextAppearance="@style/TextAppearance.Body3" />
+
+                <org.grunkspin.subtitleradiobutton.SubtitleRadioButton
+                    android:id="@+id/east"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:button="@null"
+                    android:layout_weight="1"
+                    android:textAlignment="center"
+                    android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                    app:subtitleText="@string/east"
+                    app:subtitleTextAppearance="@style/TextAppearance.Body1"
+                    app:titleText="@string/east_label"
+                    app:titleTextAppearance="@style/TextAppearance.Body3" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/roof_direction_title"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/description"/>
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                android:text="@string/roof_direction_description"
+                android:textAppearance="@style/TextAppearance.Body1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintBottom_toTopOf="@id/description2"/>
+
+            <TextView
+                android:id="@+id/description2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="@string/roof_direction_description2"
+                android:textAppearance="@style/TextAppearance.Body1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/image_layout"
+                app:layout_constraintTop_toBottomOf="@+id/description"/>
+
+            <LinearLayout
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/textView36"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description2">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/roof_direction_default" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:padding="8dp"
+                android:text="@string/roof_direction_label"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Label"
+                app:layout_constraintBottom_toTopOf="@+id/directionOptions"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

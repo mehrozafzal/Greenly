@@ -1,0 +1,102 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="homeModel"
+            type="greenely.greenely.home.models.HomeModel" />
+
+
+        <import type="android.view.View" />
+
+        <import type="greenely.greenely.utils.StringUtils" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/headerContainer"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    bind:homeModel="@{homeModel}"
+                    android:visibility="@{homeModel.hasDataState ? View.VISIBLE : View.GONE,default=gone}"
+                    layout="@layout/home_operational_state"
+                    tools:visibility="gone" />
+
+                <include
+                    android:id="@+id/waitingContainer"
+                    android:visibility="@{(homeModel.waitingState &amp;&amp; homeModel.numFriends!=0)  ? View.VISIBLE : View.GONE,default=gone}"
+                    bind:homeModel="@{homeModel}"
+                    layout="@layout/home_waiting_state"
+                    tools:visibility="gone" />
+
+                <include
+                    android:id="@+id/waitingZavanneContainer"
+                    android:visibility="@{homeModel.waitingForZavanneState ? View.VISIBLE : View.GONE,default=gone}"
+                    bind:homeModel="@{homeModel}"
+                    layout="@layout/home_waiting_state"
+                    tools:visibility="gone" />
+
+                <include
+                    android:id="@+id/poaSignupContainer"
+                    android:visibility="@{homeModel.missingPOAState ? View.VISIBLE : View.GONE,default=gone}"
+                    bind:homeModel="@{homeModel}"
+                    layout="@layout/home_needs_poa_signup_state"
+                    tools:visibility="gone" />
+
+                <include
+                    android:id="@+id/waitingContainerNoFriends"
+                    android:visibility="@{(homeModel.waitingState &amp;&amp; homeModel.numFriends==0)  ? View.VISIBLE : View.GONE,default=gone}"
+                    bind:homeModel="@{homeModel}"
+                    layout="@layout/waiting_state_with_no_friends"
+                    tools:visibility="gone" />
+
+                <include
+                    android:id="@+id/errorStateContainer"
+                    android:visibility="@{homeModel.zavanneErrorState ? View.VISIBLE : View.GONE,default=gone}"
+                    bind:homeModel="@{homeModel}"
+                    layout="@layout/home_needs_poa_signup_state"
+                    tools:visibility="gone" />
+
+
+            </LinearLayout>
+
+
+            <view
+                android:id="@+id/chart"
+                class="com.github.mikephil.charting.charts.HorizontalBarChart"
+                android:layout_width="0dp"
+                android:layout_height="350dp"
+                android:layout_marginEnd="16dp"
+                android:paddingStart="-50dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headerContainer" />
+
+            <View
+                android:background="@color/grey16"
+                app:layout_constraintTop_toBottomOf="@id/chart"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="10dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

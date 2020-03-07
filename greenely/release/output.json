@@ -1,0 +1,18 @@
+[
+  {
+    "outputType": {
+      "type": "APK"
+    },
+    "apkInfo": {
+      "type": "MAIN",
+      "splits": [],
+      "versionCode": 51
+    },
+    "path": "greenely-greenely-release.apk",
+    "properties": {
+      "packageId": "greenely.greenely",
+      "split": "",
+      "minSdkVersion": "19"
+    }
+  }
+]

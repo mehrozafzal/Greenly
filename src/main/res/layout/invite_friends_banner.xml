@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:padding="16dp"
+    android:id="@+id/referralBanner"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/giftIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@color/grey3"
+        android:textSize="16sp"
+        android:layout_marginEnd="16dp"
+        app:srcCompat="@drawable/ic_gift_circle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/container1"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+
+      <LinearLayout
+          android:id="@+id/container1"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toRightOf="@id/giftIcon"
+          app:layout_constraintRight_toLeftOf="@id/rightArrow"
+          android:layout_width="0dp"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+
+          <TextView
+              android:text="@string/invite_friends_banner_title"
+              android:textAppearance="@style/TextAppearance.Normal.SansSerif"
+              android:layout_width="wrap_content"
+              android:textColor="@color/grey3"
+              android:textStyle="bold"
+              android:textSize="20sp"
+              android:layout_height="wrap_content" />
+
+          <TextView
+              android:id="@+id/txtInviteFriendBannerSubTitle"
+              android:text="@string/invite_friends_banner_sub_title"
+              android:textColor="@color/grey3"
+              android:textAppearance="@style/TextAppearance.LightSanSerif"
+              android:layout_width="wrap_content"
+              android:textSize="12sp"
+              android:layout_height="wrap_content" />
+
+      </LinearLayout>
+
+    <ImageView
+        android:id="@+id/rightArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textColor="@color/grey3"
+        android:textSize="16sp"
+        app:srcCompat="@drawable/ic_right_arrow_green"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/container1"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

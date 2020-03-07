@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <data>
+
+        <variable
+            name="homeModel"
+            type="greenely.greenely.home.models.HomeModel" />
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.home.ui.HomeViewModel" />
+
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/container"
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stateListAnimator="@animator/appbar_not_elevated"
+                tools:ignore="UnusedAttribute">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    app:contentScrim="@color/white"
+                    app:titleEnabled="false"
+                    app:toolbarId="@+id/toolbar">
+
+                    <RadioGroup
+                        android:id="@+id/time_resolution"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="64dp"
+                        android:layout_marginEnd="16dp"
+                        android:adjustViewBounds="true"
+                        android:checkedButton="@{homeModel.resolution}"
+                        android:orientation="horizontal"
+                        app:layout_collapseMode="pin">
+
+
+                        <RadioButton
+                            android:id="@+id/months"
+                            style="@style/Widget.RadioButton.Left"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="@string/resolution_months"
+                            android:textAlignment="center" />
+
+                        <RadioButton
+                            android:id="@+id/weeks"
+                            style="@style/Widget.RadioButton.Center"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="@string/resolution_weeks"
+                            android:textAlignment="center" />
+
+                        <RadioButton
+                            android:id="@+id/days"
+                            style="@style/Widget.RadioButton.Rigth"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:text="@string/resolution_days"
+                            android:textAlignment="center" />
+
+                    </RadioGroup>
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        app:layout_collapseMode="pin"
+                        app:title="" />
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/containerLayout"
+                android:layout_width="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_height="match_parent">
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/scroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="invisible"
+                    android:fillViewport="true"
+                    android:overScrollMode="never"
+                    android:layout_alignParentTop="true"
+                    tools:visibility="visible">
+
+
+                    <LinearLayout
+                        android:focusableInTouchMode="true"
+                        android:id="@+id/content"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <include
+                            android:layout_marginTop="@dimen/size_10_dp"
+                            android:visibility="@{(!viewModel.retailStateHandler.isRetailCustomer &amp;&amp; viewModel.displayRetailSnackbar)  ? View.VISIBLE : View.GONE}"
+                            android:id="@+id/snackbar_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            layout="@layout/snack_bar"
+                            bind:handler="@{viewModel}" />
+
+                        <View
+                            android:visibility="@{(!viewModel.retailStateHandler.isRetailCustomer &amp;&amp; viewModel.displayRetailSnackbar)  ? View.VISIBLE : View.GONE}"
+                            android:background="@color/grey16"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/ultra_viewpager"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                        <View
+                            android:background="@color/grey16"
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp" />
+
+                        <RelativeLayout
+                            android:id="@+id/home_guidanceContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+            </RelativeLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loader"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="snackbar_header_text">15sp</dimen>
+    <dimen name="snackbar_sub_text">13sp</dimen>
+    <dimen name="snackbar_button_padding_vertical">9dp</dimen>
+    <dimen name="snackbar_button_padding_horizontal">16dp</dimen>
+
+    <dimen name="retail_dialog_list_label_title_size">14sp</dimen>
+    <dimen name="retail_dialog_list_label_subtitle_size">14sp</dimen>
+    <dimen name="retail_start_list_row_margin_top">18dp</dimen>
+    <dimen name="retail_start_list_subtitle_margin_top">2dp</dimen>
+
+    <dimen name="retail_dialog_list_label_subtitle_margin_start">37dp</dimen>
+    <dimen name="retail_dialog_list_label_title_margin_start">16dp</dimen>
+
+
+    <dimen name="size_5_dp">2.5dp</dimen>
+    <dimen name="size_45_dp">25dp</dimen>
+    <dimen name="size_40_dp">20dp</dimen>
+    <dimen name="size_24_dp">20dp</dimen>
+    <dimen name="size_20_dp">16dp</dimen>
+    <dimen name="size_16_dp">14dp</dimen>
+    <dimen name="size_30_dp">20dp</dimen>
+    <dimen name="size_54_dp">46dp</dimen>
+    <dimen name="size_36_dp">34dp</dimen>
+    <dimen name="size_60_dp">54dp</dimen>
+    <dimen name="size_14_dp">9dp</dimen>
+    <dimen name="size_38_dp">28dp</dimen>
+
+
+    <dimen name="heading_1">26sp</dimen>
+    <dimen name="heading_2">22sp</dimen>
+
+    <dimen name="sub_heading_1">15sp</dimen>
+
+    <dimen name="size_20_sp">18sp</dimen>
+    <dimen name="size_10_dp">10dp</dimen>
+    <dimen name="size_28_dp">28dp</dimen>
+
+    <dimen name="size_26_dp">22dp</dimen>
+    <dimen name="size_8_dp">6dp</dimen>
+
+s
+    <dimen name="size_14_sp">12sp</dimen>
+    <dimen name="size_18_sp">16sp</dimen>
+    <dimen name="size_35_sp">25sp</dimen>
+
+    <dimen name="screen_width">360dp</dimen>
+
+    //Welcome
+    <dimen name="welcome_logo">35dp</dimen>
+
+    //onboarding screen
+    <dimen name="onboardScreen_margin_bottom">5dp</dimen>
+    <dimen name="onboardScreen_info_image_width">150dp</dimen>
+    <dimen name="onboardScreen_info_image_height">100dp</dimen>
+    <dimen name="onboardScreen_info_bottom_text_margin_top">12dp</dimen>
+    <dimen name="onboardScreen_info_bottom_text1_margin_top">5dp</dimen>
+
+
+
+
+</resources>

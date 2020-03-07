@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.retailonboarding.ui.RetailOnboardingViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:stateListAnimator="@animator/appbar_not_elevated"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_green" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/button_next"
+            android:layout_marginTop="?attr/actionBarSize">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contactInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingTop="@dimen/size_5_dp"
+                android:paddingBottom="16dp">
+
+
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:text="Kontaktuppgifter"
+                    android:textAppearance="@style/TextAppearance.SubtitleBold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:text="Fyll i dina kontaktuppgifter och godkänn avtalsvillkoren."
+                    android:textAppearance="@style/TextAppearance.PlaceHolder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailAddressTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="34dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="E-postadress"
+                    app:errorMsg="@{viewModel.customerInfoErrors.emailError}"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView41">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emailTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:onTextChanged="@{viewModel.validationTextWatcher}"
+                        android:text="@={viewModel.customerInfoInput.email}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phoneNumberTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="Mobilnummer"
+                    app:errorMsg="@{viewModel.customerInfoErrors.phoneNumberError}"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/emailAddressTextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phoneNumberTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:onTextChanged="@{viewModel.validationTextWatcher}"
+                        android:text="@={viewModel.customerInfoInput.phoneNumber}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/terms"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="?attr/actionBarSize"
+                    android:paddingStart="25dp"
+                    android:text="@string/retail_terms_accept"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/phoneNumberTextInputLayout" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/userTermsToggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:checked="@{viewModel.customerInfoInput.userTermsAccepted}"
+                    android:thumb="@drawable/switch_custom_thumb"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/terms"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:switchMinWidth="50dp"
+                    app:track="@drawable/switch_control" />
+
+                <TextView
+                    android:id="@+id/powerOfAttorneyTerms"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="29dp"
+                    android:layout_marginBottom="?attr/actionBarSize"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="80dp"
+                    android:text="@string/retail_power_of_attorney_accept"
+                    app:layout_constraintTop_toBottomOf="@+id/terms" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/powerOfAttorneyToggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="25dp"
+                    android:checked="@{viewModel.customerInfoInput.powerOfAttorneyTermsAccepted}"
+                    android:thumb="@drawable/switch_custom_thumb"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/powerOfAttorneyTerms"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:switchMinWidth="50dp"
+                    app:track="@drawable/switch_control" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60_dp"
+            android:textSize="@dimen/size_18_sp"
+            android:textAppearance="@style/TextAppearance.BoldSanSerif"
+            android:layout_alignParentBottom="true"
+            android:background="@color/new_green"
+            android:text="@string/sign_with_bankid" />
+
+    </RelativeLayout>
+</layout>

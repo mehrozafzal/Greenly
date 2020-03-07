@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.guidance.ui.GuidanceViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:stateListAnimator="@animator/appbar_not_elevated"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                app:title="@string/guidance_settings_label"
+                android:layout_height="?android:attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_green" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <!--     <androidx.core.widget.NestedScrollView
+                 android:id="@+id/scroll"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/guidance_solarAnalysisTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:text="@string/guidance"
+                android:textSize="@dimen/_20ssp"
+                android:textAppearance="@style/TextAppearance.Title" />
+
+            <LinearLayout
+                android:id="@+id/guidance_solarAnalysisContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:paddingBottom="16dp"
+                android:background="@drawable/green_rounded_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Analys"
+                    android:textSize="@dimen/_10ssp"
+                    android:fontFamily="@font/gt_america_medium"
+                    android:textStyle="bold"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Intresserad av \nsolceller?"
+                    android:textSize="@dimen/_17ssp"
+                    android:fontFamily="@font/gt_america_medium"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="2dp"
+                    android:textColor="@color/white" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Gör en enkel analys för att ta reda på om ditt tak lämpar sig för solceller"
+                    android:textSize="@dimen/_11ssp"
+                    android:fontFamily="@font/gt_america_light"
+                    android:textColor="@color/white"
+                    android:lineSpacingExtra="2dp" />
+
+                <TextView
+                    android:id="@+id/guidance_solarAnalysisBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/white_button_rounded"
+                    android:text="Påbörja solcellsanalys!"
+                    android:textColor="@color/new_green"
+                    android:fontFamily="@font/gt_america_medium"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_13ssp"
+                    android:gravity="center"
+                    android:padding="16dp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/white"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp" />
+
+                <RelativeLayout
+                    android:id="@+id/guidance_latestAnalysisContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/guidance_previousResults"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tidigare resultat"
+                        android:layout_marginStart="16dp"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="@font/gt_america_medium"
+                        android:textSize="@dimen/_11ssp"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/guidance_createdDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_alignParentEnd="true"
+                        android:fontFamily="@font/gt_america_medium"
+                        android:textSize="@dimen/_10ssp"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:text="@string/offerings_title"
+                android:textAppearance="@style/TextAppearance.Title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/offerings_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                tools:listitem="@layout/guidance_offer_article_item" />
+
+            <TextView
+                android:id="@+id/textView35"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:baselineAligned="false"
+                android:text="@string/energy_tips_title"
+                android:textAppearance="@style/TextAppearance.Title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/energy_tips_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp" />
+
+            <TextView
+                android:id="@+id/textView36"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:baselineAligned="false"
+                android:text="@string/guide_and_articles"
+                android:textAppearance="@style/TextAppearance.Title" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/articles_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                tools:listitem="@layout/guidance_offer_article_item" />
+
+        </LinearLayout>
+
+        <!--  </androidx.core.widget.NestedScrollView>-->
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

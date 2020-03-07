@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="128dp"
+    android:height="112dp"
+    android:viewportWidth="128"
+    android:viewportHeight="112">
+
+    <group
+        android:translateX="80">
+        <path
+            android:fillColor="#FFF"
+            android:pathData="M0 0v32h20V0z" />
+        <path
+            android:strokeColor="#000"
+            android:strokeAlpha=".88"
+            android:strokeWidth="2"
+            android:pathData="M1 1v30h18V1H1z" />
+    </group>
+    <group
+        android:translateX="80">
+        <path
+            android:fillColor="#FFF"
+            android:pathData="M1 4h18v4H1z" />
+        <path
+            android:strokeColor="#000"
+            android:strokeAlpha=".88"
+            android:strokeWidth="1"
+            android:pathData="M1.5 4.5h17v3h-17z" />
+    </group>
+    <group
+        android:translateX="20"
+        android:translateY="12">
+        <path
+            android:fillColor="#FFF"
+            android:pathData="M0 100h88V16L44 0 0 16z" />
+        <path
+            android:strokeColor="#000"
+            android:strokeAlpha=".88"
+            android:strokeWidth="2"
+            android:pathData="M1 99h86V16.7L44 1.064 1 16.7V99z" />
+    </group>
+    <path
+        android:strokeColor="#000"
+        android:strokeAlpha=".88"
+        android:strokeWidth="1"
+        android:pathData="M24.5 20.5h1v91h-1zM103.5 20.5h1v91h-1z" />
+    <path
+        android:fillColor="#FFF"
+        android:pathData="M64 0L0 25v16l64-25 64 25V25z" />
+    <path
+        android:fillColor="#1CAA2F"
+        android:fillAlpha=".08"
+        android:pathData="M64 0L0 25v16l64-25 64 25V25z" />
+    <path
+        android:fillColor="#1CAA2F"
+        android:fillAlpha=".08"
+        android:pathData="M64 0L0 25v16l64-25 64 25V25z" />
+    <path
+        android:strokeColor="#979797"
+        android:strokeWidth="1"
+        android:pathData="M64 0.537L0.5 25.34v14.927L64 15.463l63.5 24.805V25.34L64 0.537z" />
+    <path
+        android:strokeColor="#1CAA2F"
+        android:strokeWidth="2"
+        android:pathData="M64 1.074L1 25.683v13.853l63-24.61 63 24.61V25.683L64 1.073z" />
+    <path
+        android:strokeColor="#1CAA2F"
+        android:strokeWidth="1"
+        android:pathData="M0 37l64-25 64 25" />
+</vector>

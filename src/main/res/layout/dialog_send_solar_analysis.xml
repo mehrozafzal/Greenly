@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dialogSolarAnalysis_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:padding="@dimen/size_10_dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dialogSolarAnalysis_title"
+                    android:textAppearance="@style/TextAppearance.Body4"
+                    android:fontFamily="sans-serif"
+                    android:paddingStart="@dimen/size_10_dp"
+                    android:paddingEnd="@dimen/size_10_dp"
+                    android:textAlignment="center"
+                    android:layout_marginTop="@dimen/size_10_dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="@dimen/size_10_dp">
+
+                    <TextView
+                        android:id="@+id/dialogSolarAnalysis_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nej"
+                        android:paddingTop="@dimen/size_10_dp"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.Body4"
+                        android:textColor="@color/friendList_radio_button_color"
+                        android:fontFamily="sans-serif-medium"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/size_16_sp"
+                        android:layout_weight="1" />
+
+                    <TextView
+                        android:id="@+id/dialogSolarAnalysis_yes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ja"
+                        android:paddingTop="@dimen/size_10_dp"
+                        android:gravity="center"
+                        android:textAppearance="@style/TextAppearance.Body4"
+                        android:textColor="@color/friendList_radio_button_color"
+                        android:fontFamily="sans-serif-medium"
+                        android:textAllCaps="true"
+                        android:textSize="@dimen/size_16_sp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</layout>

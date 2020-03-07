@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="latestSolarAnalysis"
+            type="greenely.greenely.guidance.models.LatestSolarAnalysis" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:title="@string/solar_analysis">
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:id="@+id/heading_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/your_results"
+                        android:textAppearance="@style/TextAppearance.Title" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="8dp"
+                        android:text="@string/solar_results_description"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Body1" />
+
+                    <TextView
+                        android:id="@+id/yearlySavingHeading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textAppearance="@style/TextAppearance.Headline"
+                        tools:text="1200 kr/år" />
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:layout_marginTop="16dp" />
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/divider_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/heading_layout" />
+
+                <TextView
+                    android:id="@+id/summery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/analysis_summery"
+                    android:textAppearance="@style/TextAppearance.Body2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+                <TextView
+                    android:id="@+id/potentialCostText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/potential_saving"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/summery" />
+
+                <TextView
+                    android:id="@+id/potentialCost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{latestSolarAnalysis.potentialSaving}"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/potentialCostText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="xxx xxx kr" />
+
+                <TextView
+                    android:id="@+id/costAfterText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/estimated_cost_after_solar_support"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/potentialCostText" />
+
+                <TextView
+                    android:id="@+id/costAfter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{latestSolarAnalysis.estimatedCostAfterSolarSupport}"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/costAfterText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="xxx xxx kr" />
+
+                <TextView
+                    android:id="@+id/total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/total_cost"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/costAfterText" />
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{latestSolarAnalysis.totalSaving}"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/total"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="xxx xxx kr" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/divider_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/total" />
+
+                <TextView
+                    android:id="@+id/calculations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/calculations"
+                    android:textAppearance="@style/TextAppearance.Body2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                <TextView
+                    android:id="@+id/yearlyProductionText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/yearly_production"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calculations" />
+
+                <TextView
+                    android:id="@+id/yearlyProduction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{latestSolarAnalysis.yearlyProduction}"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/yearlyProductionText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="1000 kWh" />
+
+                <TextView
+                    android:id="@+id/yearlySavingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/yearly_saving"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/yearlyProductionText" />
+
+                <TextView
+                    android:id="@+id/yearlySaving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{latestSolarAnalysis.yearlySaving}"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/yearlySavingText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="100 kr" />
+
+
+                <TextView
+                    android:id="@+id/payBackTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payback_time"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/yearlySavingText" />
+
+                <TextView
+                    android:id="@+id/paybackTimeWithSolarSupport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{latestSolarAnalysis.paybackTimeWithSolarSupport}"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/payBackTime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="15 år" />
+
+                <TextView
+                    android:id="@+id/solarPanelLifeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/solar_panel_life_span"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/payBackTime" />
+
+                <TextView
+                    android:id="@+id/solarPanelsLife"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{latestSolarAnalysis.solarPanelLifeSpan}"
+                    android:textAppearance="@style/TextAppearance.Body1"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/solarPanelLifeText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="15 år" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/divider_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/solarPanelLifeText" />
+
+                <TextView
+                    android:id="@+id/solarAnalysisExplanation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="@string/solar_analysis_caption"
+                    android:textAppearance="@style/TextAppearance.Caption"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

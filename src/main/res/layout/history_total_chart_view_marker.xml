@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="greenely.greenely.home.ui.historicalcomparison.MarkerObject" />
+
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tvMe"
+            android:elevation="10dp"
+            android:layout_width="@dimen/marker_view_width"
+            android:layout_height="wrap_content"
+            android:background="@drawable/green_rounded_background"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textAppearance="@style/TextAppearance.HistoricalComparisonMarkerView"
+            tools:text="101 Kb" />
+
+    </LinearLayout>
+</layout>

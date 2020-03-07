@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.settings.ui.SettingsViewModel" />
+
+        <variable
+            name="notificationModel"
+            type="greenely.greenely.settings.data.NotificationSettingModel" />
+
+        <import type="android.view.View" />
+
+        <import type="greenely.greenely.utils.StringUtils" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainContainer"
+        android:layout_width="match_parent"
+        android:background="@color/grey17"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:stateListAnimator="@animator/appbar_not_elevated"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                app:title="@string/notification_settings_label"
+                android:layout_height="?android:attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_green" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            app:layout_constraintTop_toBottomOf="@id/app_bar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/changeParameterContainer"
+                    style="@style/SettingLinearLayoutStyle"
+                    android:background="@android:color/transparent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAllCaps="true"
+                        android:text="@string/all_notification_label"
+                        android:textAppearance="@style/TextAppearance.SettingItem.notification" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/allSettingToggle"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:checked="@={notificationModel.isAllNotificationEnabled}"
+                        android:onCheckedChanged="@{viewModel.onAllNotificationToggleClickListener}"
+                        android:thumb="@drawable/switch_custom_thumb"
+                        app:switchMinWidth="30dp"
+                        app:track="@drawable/switch_control" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/general_label"
+                    android:enabled="@{notificationModel.isAllNotificationEnabled}"
+                    android:textAllCaps="true"
+                    style="@style/SettingSingleItem.notification"
+                    />
+
+
+                <LinearLayout
+                    android:id="@+id/weeklyReportContainer"
+                    style="@style/SettingHeaderContainerStyle"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/weeklyReportLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="@{notificationModel.isAllNotificationEnabled}"
+                        android:text="@string/weekly_report_label"
+                        android:textAppearance="@style/TextAppearance.SettingItem.notification" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/weeklyReportToggle"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:checked="@={notificationModel.isWeeklyPushEnabled}"
+                        android:enabled="@{notificationModel.isAllNotificationEnabled}"
+                        android:onCheckedChanged="@{viewModel.commonToggleClickListener}"
+                        android:thumb="@drawable/switch_custom_thumb"
+                        app:switchMinWidth="30dp"
+                        app:track="@drawable/switch_control" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/monthlyReportContainer"
+                    style="@style/SettingHeaderContainerStyle"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/monthlyReportLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="@{notificationModel.isAllNotificationEnabled}"
+                        android:text="@string/monthly_report_label"
+                        android:textAppearance="@style/TextAppearance.SettingItem.notification" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/monthlyReportToggle"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:checked="@={notificationModel.isMonthlyPushEnabled}"
+                        android:enabled="@{notificationModel.isAllNotificationEnabled}"
+                        android:onCheckedChanged="@{viewModel.commonToggleClickListener}"
+                        android:thumb="@drawable/switch_custom_thumb"
+                        app:switchMinWidth="30dp"
+                        app:track="@drawable/switch_control" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/electricity_label"
+                    android:textAllCaps="true"
+                    tools:visibility="visible"
+                    android:enabled="@{notificationModel.isAllNotificationEnabled &amp;&amp; viewModel.retailStateHandler.isRetailCustomer }"
+                    style="@style/SettingSingleItem.notification"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginBottom="0dp"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/dailyPricePushContainer"
+                    tools:visibility="visible"
+                    style="@style/SettingHeaderContainerStyle"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/dailyPricePushTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:enabled="@{notificationModel.isAllNotificationEnabled &amp;&amp; viewModel.retailStateHandler.isRetailCustomer }"
+                        android:text="@string/tomorrow_avg_price_label"
+                        android:textAppearance="@style/TextAppearance.SettingItem.notification" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/dailyPricePushToggle"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:onCheckedChanged="@{viewModel.onRetailSettingsToggleClickListener}"
+                        android:checked="@={notificationModel.isDailyPricePushEnabledDisplayValue}"
+                        android:thumb="@drawable/switch_custom_thumb"
+                        app:switchMinWidth="30dp"
+                        app:track="@drawable/switch_control" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/pricePushContainer"
+                    tools:visibility="visible"
+                    style="@style/SettingHeaderContainerStyle"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/high_low_price_label"
+                        android:id="@+id/pricePushtTxt"
+                        android:enabled="@{notificationModel.isAllNotificationEnabled &amp;&amp; viewModel.retailStateHandler.isRetailCustomer }"
+                        android:textAppearance="@style/TextAppearance.SettingItem.notification" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/pricePushToggle"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_width="wrap_content"
+                        android:onCheckedChanged="@{viewModel.onRetailSettingsToggleClickListener}"
+                        android:checked="@={notificationModel.isPricePushEnabledDisplayValue}"
+                        android:layout_height="30dp"
+                        android:thumb="@drawable/switch_custom_thumb"
+                        app:switchMinWidth="30dp"
+                        app:track="@drawable/switch_control" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/newOverdueInvoiceContainer"
+                    tools:visibility="visible"
+                    style="@style/SettingHeaderContainerStyle"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/newOverdueInvoiceTxt"
+                        android:enabled="@{notificationModel.isAllNotificationEnabled &amp;&amp; viewModel.retailStateHandler.isRetailCustomer }"
+                        android:text="@string/overdue_invoice_label"
+                        android:textAppearance="@style/TextAppearance.SettingItem.notification" />
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/newOverdueInvoiceToggle"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:onCheckedChanged="@{viewModel.onRetailSettingsToggleClickListener}"
+                        android:checked="@={notificationModel.isInvoicePushEnabledDisplayValue}"
+                        android:thumb="@drawable/switch_custom_thumb"
+                        app:switchMinWidth="30dp"
+                        app:track="@drawable/switch_control" />
+                </LinearLayout>
+
+
+
+
+
+            </LinearLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

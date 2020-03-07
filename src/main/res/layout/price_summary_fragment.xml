@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayoutContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/green_2"
+                android:stateListAnimator="@animator/appbar_not_elevated">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/transparent"
+                        app:layout_collapseMode="pin">
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:fillViewport="true">
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/green_background_gradient"
+                        android:gravity="left"
+                        android:paddingLeft="@dimen/size_16_dp"
+                        android:paddingRight="@dimen/size_26_dp"
+                        android:paddingBottom="@dimen/size_16_dp"
+                        android:text="@string/electric_agreement_title"
+                        android:textAppearance="@style/TextAppearance.Display9"
+                        android:textColor="@color/white"
+                        />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:id="@+id/mainContainer"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintLeft_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/title">
+
+
+                        <TextView
+                            android:id="@+id/list_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:paddingLeft="@dimen/size_26_dp"
+                            android:paddingTop="@dimen/size_16_dp"
+                            android:text="@string/you_pay_label"
+                            android:textAppearance="@style/TextAppearance.Normal.SansSerif"
+                            android:textSize="@dimen/size_15_sp"
+                            android:textStyle="bold"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/list_attributes"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/list_header"
+                            tools:itemCount="5"
+                            tools:listitem="@layout/price_summary_list_item"></androidx.recyclerview.widget.RecyclerView>
+
+
+                        <TextView
+                            android:id="@+id/btn_redeem_code"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:paddingLeft="@dimen/size_26_dp"
+                            android:paddingTop="@dimen/size_8_dp"
+                            android:text="@string/add_activation_code"
+                            android:textAppearance="@style/TextAppearance.Green"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/list_attributes" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btnContinue"
+                            style="@style/Widget.Button.Register"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/size_30_dp"
+                            android:layout_marginTop="@dimen/size_26_dp"
+                            android:layout_marginEnd="@dimen/size_30_dp"
+                            android:layout_marginBottom="@dimen/size_16_dp"
+                            android:background="@drawable/green_rounded_button"
+                            android:elevation="20dp"
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:text="@string/continue_label"
+                            android:textAppearance="@style/TextAppearance.GreenButton"
+                            app:layout_constraintBottom_toTopOf="@id/no_tax"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/btn_redeem_code"
+                            app:layout_constraintVertical_bias="0.8" />
+
+
+                        <TextView
+                            android:id="@+id/no_tax"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/size_5_dp"
+                            android:textSize="@dimen/size_14_sp"
+                            android:text="@string/no_tax_label"
+                            android:textAppearance="@style/TextAppearance.LightSanSerif"
+                            android:textColor="@color/grey3"
+                            app:layout_constraintBottom_toTopOf="@id/discountForMonthsLabel"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/discountForMonthsLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/size_8_dp"
+                            android:text="@string/discount_for_months_price_summary"
+                            android:textAppearance="@style/TextAppearance.LightSanSerif"
+                            android:textColor="@color/grey4"
+                            android:textSize="@dimen/size_14_sp"
+                            app:layout_constraintBottom_toTopOf="@id/all_cost_included"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+
+                        <TextView
+                            android:id="@+id/all_cost_included"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/size_8_dp"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/size_8_dp"
+                            android:textSize="@dimen/size_14_sp"
+                            android:paddingBottom="@dimen/size_5_dp"
+                            android:text="@string/all_cost_included_label"
+                            android:textAppearance="@style/TextAppearance.LightSanSerif"
+                            android:textColor="@color/grey4"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loader"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

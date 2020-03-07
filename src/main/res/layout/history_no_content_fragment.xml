@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.history.HistoryViewModel" />
+
+        <variable
+            name="headerModel"
+            type="greenely.greenely.history.models.HeaderModel"/>
+
+
+        <import type="android.view.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/no_content_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center"
+                    android:text="@{viewModel.noContentTitle}"
+                    android:textAppearance="@style/TextAppearance.Title1"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/consumptionInfo"
+                    tools:text="Title" />
+
+                <TextView
+                    android:id="@+id/no_content_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:lineSpacingExtra="6sp"
+                    android:text="@{viewModel.noContentBody}"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.Subheading2"
+                    android:textColor="@color/grey13"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/no_content_title"
+                    tools:text="Body" />
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:id="@+id/consumptionInfo"
+                    android:background="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="@{headerModel.consumptionHeaderText}"
+                        tools:text="@string/consumption_header_text"
+                        android:layout_marginEnd="5dp"
+                        android:textAppearance="@style/TextAppearance.Body5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="@dimen/size_16_dp"
+                        tools:text="@string/kWh"
+                        android:textSize="14sp"
+                        android:text="@{headerModel.consumption}"
+                        android:textColor="@color/grey21"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

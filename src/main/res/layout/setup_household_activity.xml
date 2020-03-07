@@ -1,0 +1,73 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:title="@string/household_profile"/>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+               <com.stepstone.stepper.StepperLayout
+                   android:id="@+id/stepper"
+                   android:layout_width="0dp"
+                   android:layout_height="0dp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   app:ms_activeStepColor="@color/accent"
+                   app:ms_backButtonColor="@color/accent"
+                   app:ms_nextButtonColor="@color/accent"
+                   app:ms_completeButtonColor="@color/accent"
+                   app:ms_completeButtonText="@string/done"
+                   app:ms_nextButtonText="@string/next"
+                   app:ms_backButtonText="@string/back"
+                   app:ms_showBackButtonOnFirstStep="true"
+                   app:ms_stepperType="none" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+         <LinearLayout
+             android:orientation="vertical"
+             android:gravity="center_vertical"
+             android:elevation="100dp"
+             android:id="@+id/loader"
+             android:visibility="gone"
+             android:background="#80FFFFFF"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:visibility="gone"
+             tools:ignore="UnusedAttribute">
+
+             <ProgressBar
+                 android:layout_gravity="center"
+                 style="@style/Base.Widget.AppCompat.ProgressBar"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"/>
+
+             <TextView
+                 android:layout_marginTop="16dp"
+                 android:text="@string/loading"
+                 android:layout_gravity="center_horizontal"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"/>
+         </LinearLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

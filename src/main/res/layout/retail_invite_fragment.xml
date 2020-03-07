@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+        <variable
+            name="model"
+            type="greenely.greenely.retailinvite.models.ReferralInviteResponseModel" />
+
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayoutContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:stateListAnimator="@animator/appbar_not_elevated">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="@android:color/transparent"
+                        app:layout_collapseMode="pin">
+
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/scroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:fillViewport="true">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="26dp"
+                        android:paddingBottom="16dp"
+                        android:text="@string/retail_invite_screen_label"
+                        android:textAppearance="@style/TextAppearance.Display9"
+                        android:textColor="@color/black_1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/invite_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="left"
+                        android:text="@string/retail_invite_description"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="19sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/title" />
+
+                    <TextView
+                        android:id="@+id/inviteDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="left"
+                        android:text="@string/retail_invite_detail_link_label"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/green_1"
+                        android:textSize="18sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/invite_description" />
+
+
+                    <TextView
+                        android:id="@+id/txtBalanceLabel"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:gravity="left"
+                        android:text="@string/referral_balance_label"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="16sp"
+                        android:visibility="@{model.remainingCredits==null?View.INVISIBLE : View.VISIBLE}"
+                        app:layout_constraintBottom_toTopOf="@id/btnRetailInvite"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/txtBalance"
+                        app:layout_constraintTop_toBottomOf="@id/inviteDetails"
+                        app:layout_constraintVertical_bias="0.3"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/txtBalance"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:gravity="right"
+                        android:text="--"
+                        android:textColor="@color/grey3"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="@{model.remainingCredits==null?View.INVISIBLE : View.VISIBLE}"
+                        app:layout_constraintBottom_toTopOf="@id/btnRetailInvite"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintHorizontal_weight="1"
+                        app:layout_constraintLeft_toRightOf="@+id/txtBalanceLabel"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/inviteDetails"
+                        app:layout_constraintVertical_bias="0.3" />
+
+                    <View
+                        android:id="@+id/sepView"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:visibility="@{model.remainingCredits==null?View.INVISIBLE : View.VISIBLE}"
+                        android:background="@color/grey5"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txtBalance" />
+
+
+                    <TextView
+                        android:id="@+id/txtCodeLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="left"
+                        android:text="@string/your_code_label"
+                        android:textColor="@color/grey3"
+                        android:textSize="16sp"
+                        android:lines="1"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        app:layout_constraintBottom_toTopOf="@id/btnRetailInvite"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@+id/txtCode"
+                        app:layout_constraintTop_toBottomOf="@id/sepView"
+                        app:layout_constraintVertical_bias="0.9"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/txtCode"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="right"
+                        tools:text="123456"
+                        android:text="@{model.referralCode}"
+                        android:textAppearance="@style/TextAppearance.MediumSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@id/btnRetailInvite"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintLeft_toRightOf="@+id/txtCodeLabel"
+                        app:layout_constraintTop_toBottomOf="@id/sepView"
+                        app:layout_constraintVertical_bias="0.9" />
+
+                    <TextView
+                        android:id="@+id/btnCopy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="right"
+                        android:text="Kopiera"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/green_1"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toTopOf="@id/btnRetailInvite"
+                        app:layout_constraintHorizontal_chainStyle="spread_inside"
+                        app:layout_constraintLeft_toRightOf="@+id/txtCode"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/sepView"
+                        app:layout_constraintVertical_bias="0.9" />
+
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnRetailInvite"
+                        style="@style/Widget.Button.Register"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginBottom="26dp"
+                        android:background="@drawable/green_rounded_button"
+                        android:drawableStart="@drawable/ic_share_icon"
+                        android:drawablePadding="0dp"
+                        android:elevation="5dp"
+                        android:gravity="center"
+                        android:paddingLeft="40dp"
+                        android:paddingRight="50dp"
+                        android:text="@string/retail_invite_button_label"
+                        android:textAppearance="@style/TextAppearance.GreenButton"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loader"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

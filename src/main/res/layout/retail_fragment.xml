@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/snackbarview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="UnusedAttribute">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/new_green"
+                    android:stateListAnimator="@animator/appbar_not_elevated">
+
+                    <com.google.android.material.appbar.CollapsingToolbarLayout
+                        android:id="@+id/retailCollapsingToolbarLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/new_green"
+                        app:collapsedTitleTextAppearance="@style/collapsingToolbarLayoutTitleColor"
+                        app:contentScrim="@color/new_green"
+                        app:expandedTitleTextAppearance="@style/collapsingToolbarLayoutTitleColor"
+                        app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+                        app:titleEnabled="true"
+                        app:titleTextAppearance="@style/collapsingToolbarLayoutTitleColor">
+
+                        <include
+                            android:id="@+id/current_month_chart"
+                            layout="@layout/retail_overview_current_month_consumption" />
+
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/toolbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:background="@android:color/transparent"
+                            app:layout_collapseMode="pin">
+
+                            <RelativeLayout
+                                android:id="@+id/toolbarRelativeLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+
+                                <include
+                                    android:id="@+id/invoicesBadgeLayout"
+                                    layout="@layout/custom_invoices_badge_layout"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginTop="3dp" />
+
+                                <TextView
+                                    android:id="@+id/toolbarTitle"
+                                    style="@android:style/TextAppearance.Medium"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="Mitt abonnemang"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/white"
+                                    android:textSize="18sp"
+                                    android:visibility="gone" />
+
+                                <include
+                                    android:id="@+id/intercomBadgeLayout"
+                                    layout="@layout/custom_notification_badge_retail_layout"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="45dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp" />
+
+
+                            </RelativeLayout>
+                        </androidx.appcompat.widget.Toolbar>
+
+
+                    </com.google.android.material.appbar.CollapsingToolbarLayout>
+                </com.google.android.material.appbar.AppBarLayout>
+
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/nestedChartScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                    <LinearLayout
+                        android:id="@+id/chartsLinearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <include
+                            android:id="@+id/invite_friend_banner"
+                            layout="@layout/invite_friends_banner" />
+
+                        <include
+                            android:id="@+id/current_day_chart"
+                            layout="@layout/retail_overview_current_day_pricing" />
+
+                        <include
+                            android:id="@+id/next_day_chart"
+                            layout="@layout/retail_overview_next_day_pricing" />
+
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/loader"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

@@ -1,0 +1,253 @@
+import groovy.json.JsonSlurper
+
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-allopen'
+apply plugin: 'deploygate'
+
+android {
+
+    signingConfigs {
+        greenely {
+            def credentialsFile = file("../greenely_credentials.json")
+            if (credentialsFile.exists()) {
+                def credsFilePath = credentialsFile.toString()
+                def credsFile = new File(credsFilePath, "").getText('UTF-8')
+                def json = new JsonSlurper().parseText(credsFile)
+                storeFile file(json.android.storeFile)
+                storePassword = json.android.storePassword
+                keyAlias = json.android.keyAlias
+                keyPassword = json.android.keyPassword
+            }
+        }
+    }
+
+
+    compileSdkVersion 29
+    buildToolsVersion '28.0.3'
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 119
+        versionName "7.0.2"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "greenely.greenely.TestRunner"
+        multiDexEnabled true
+    }
+
+    dexOptions {
+        preDexLibraries = false
+        javaMaxHeapSize "4g"
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    testOptions {
+        animationsDisabled = true
+        unitTests {
+            all {
+                reports.html.enabled = false
+                reports.junitXml.enabled = false
+                maxParallelForks = Runtime.runtime.availableProcessors()
+            }
+            returnDefaultValues = true
+            includeAndroidResources = true
+        }
+    }
+
+    // Solves a bug with support drawables.
+    aaptOptions {
+        noCompress "pdf"
+        additionalParameters "--no-version-vectors"
+    }
+
+
+    dataBinding {
+        enabled = true
+        version = '3.3.2'
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+
+    buildTypes {
+
+        release {
+            signingConfig signingConfigs.greenely
+            resValue "string", "intercom_api_key", "android_sdk-24ba514fac8080f6aa4c7ff5f1a22a0da7398cdb"
+            resValue "string", "intercom_app_id", "crlkzli1"
+            debuggable false
+            minifyEnabled true
+            shrinkResources true
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "api_base", "https://api2.greenely.com/"
+            resValue "string", "staging_base_url", "https://stagingapi.greenely.com/"
+            resValue "string", "production_base_url", "https://api2.greenely.com/"
+            resValue "string", "mock_postman_base_url", "https://5567ef75-5bb2-4b43-8d23-5bbbbdbf98d5.mock.pstmn.io/"
+            buildConfigField "String", "postman_api_key", "\"ff1989581b0741e2983e908125fdf881\""
+            buildConfigField "String", "postman_app_id", "\"X-Api-Key\""
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_launcher"
+            ]
+        }
+
+        debug {
+            multiDexEnabled true
+            resValue "string", "intercom_api_key", "android_sdk-cd052306fb31cc44cf56d7f65c7560d3a047855f"
+            resValue "string", "intercom_app_id", "l4wwwwic"
+            versionNameSuffix "-DEBUG"
+            applicationIdSuffix ".debug"
+            resValue "string", "api_base", "https://stagingapi.greenely.com/"
+            resValue "string", "staging_base_url", "https://stagingapi.greenely.com/"
+            resValue "string", "production_base_url", "https://api2.greenely.com/"
+            resValue "string", "mock_postman_base_url", "https://5567ef75-5bb2-4b43-8d23-5bbbbdbf98d5.mock.pstmn.io/"
+            buildConfigField "String", "postman_api_key", "\"ff1989581b0741e2983e908125fdf881\""
+            buildConfigField "String", "postman_app_id", "\"X-Api-Key\""
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_dev_launcher"
+            ]
+        }
+
+        releaseCandidate {
+            versionNameSuffix "-RC"
+            applicationIdSuffix ".rc"
+            debuggable false
+            minifyEnabled false
+            shrinkResources false
+            useProguard true
+            versionNameSuffix "-RC"
+            applicationIdSuffix ".rc"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            resValue "string", "api_base", "https://api2.greenely.com/"
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/ic_rc_launcher"
+            ]
+        }
+    }
+
+    packagingOptions {
+        exclude 'publicsuffixes.gz'
+    }
+
+
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+allOpen {
+    annotation 'greenely.greenely.OpenClass'
+}
+
+dependencies {
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation('com.segment.analytics.android:analytics:+') {
+        transitive = true
+    }
+    implementation 'com.github.HITGIF:TextFieldBoxes:1.3.8'
+    implementation 'com.robohorse.pagerbullet:pagerbullet:1.0.8'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
+    implementation 'androidx.lifecycle:lifecycle-reactivestreams:2.1.0'
+    implementation 'net.danlew:android.joda:2.10.1'
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.browser:browser:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
+    implementation 'androidx.core:core:1.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    implementation 'io.reactivex:rxkotlin:2.0.0-RC1'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'com.squareup.moshi:moshi:1.5.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation 'com.stepstone.stepper:material-stepper:4.3.1'
+    implementation "com.google.dagger:dagger:$dagger_version"
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    implementation 'com.appsflyer:af-android-sdk:4.8.19'
+    implementation 'com.android.installreferrer:installreferrer:1.1'
+    implementation 'com.facebook.android:facebook-android-sdk:4.25.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "io.intercom.android:intercom-sdk-base:$intercom_version"
+    implementation "io.intercom.android:intercom-sdk-fcm:$intercom_version"
+    implementation 'com.google.firebase:firebase-messaging:17.6.0'
+    implementation 'com.github.540Grunkspin.swedishformats:swedishformats:1.0'
+    implementation 'com.github.540Grunkspin.swedishformats:swedishformats-android:1.0'
+    implementation 'com.github.540Grunkspin:subtitle-radio-button:0.2.1'
+    implementation 'com.github.540Grunkspin:notification-dotted-drawable:1.0.1'
+    implementation 'vn.tiki.noadapter2:noadapter:2.0.2'
+    implementation 'vn.tiki.noadapter2:noadapter-databinding:2.0.2'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'jp.wasabeef:glide-transformations:3.0.1'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.alibaba.android:ultraviewpager:1.0.6.1@aar'
+    implementation 'com.jidogoon:PdfRendererView:1.0.10'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.nex3z:notification-badge:1.0.2'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'com.google.firebase:firebase-core:16.0.8'
+    implementation 'me.jessyan:retrofit-url-manager:1.4.0'
+    implementation 'com.afollestad:viewpagerdots:1.0.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+    implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
+    implementation 'me.relex:circleindicator:2.1.4'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.mikhaellopez:circleview:1.3.1'
+
+
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+    kapt 'org.parceler:parceler:1.1.12'
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt 'androidx.lifecycle:lifecycle-compiler:2.1.0'
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+    testImplementation 'joda-time:joda-time:2.10.1'
+    testImplementation 'org.assertj:assertj-joda-time:2.2.0'
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
+    testImplementation "io.kotlintest:kotlintest:2.0.5"
+    testImplementation "com.nhaarman:mockito-kotlin:$mockito_kotlin_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    testImplementation "org.powermock:powermock-api-mockito2:2.0.0-beta.5"
+    testImplementation "org.powermock:powermock-module-junit4:2.0.0-beta.5"
+
+    testImplementation "org.robolectric:multidex:3.4.2"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+    testImplementation "com.google.dagger:dagger:$dagger_version"
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-core:3.11.1'
+    testImplementation 'org.assertj:assertj-joda-time:2.2.0'
+    testImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    testImplementation 'org.robolectric:robolectric:4.2.1'
+    testImplementation 'com.rubylichtenstein:rxtest:1.0.4'
+    kaptTest "com.google.dagger:dagger-compiler:$dagger_version"
+    implementation 'com.google.firebase:firebase-invites:17.0.0'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation("io.coil-kt:coil:0.8.0")
+    implementation 'com.github.dhaval2404:imagepicker:1.6'
+    implementation 'com.github.florent37:inline-activity-result-kotlin:1.0.1'
+    implementation 'de.hdodenhof:circleimageview:3.0.1'
+}
+
+apply plugin: 'com.google.gms.google-services'

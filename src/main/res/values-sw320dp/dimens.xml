@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="snackbar_header_text">12sp</dimen>
+    <dimen name="snackbar_sub_text">10sp</dimen>
+
+    <dimen name="snackbar_button_padding_vertical">8dp</dimen>
+    <dimen name="snackbar_button_padding_horizontal">14dp</dimen>
+    <dimen name="retail_dialog_list_label_title_size">12sp</dimen>
+    <dimen name="retail_dialog_list_label_subtitle_size">10sp</dimen>
+    <dimen name="retail_start_list_row_margin_top">16dp</dimen>
+    <dimen name="retail_start_list_subtitle_margin_top">1dp</dimen>
+
+    <dimen name="retail_dialog_list_label_subtitle_margin_start">37dp</dimen>
+    <dimen name="retail_dialog_list_label_title_margin_start">16dp</dimen>
+
+    <dimen name="heading_1">24sp</dimen>
+    <dimen name="heading_2">20sp</dimen>
+
+    <dimen name="sub_heading_1">14sp</dimen>
+
+    <dimen name="size_5_dp">2.5dp</dimen>
+    <dimen name="size_45_dp">25dp</dimen>
+    <dimen name="size_40_dp">20dp</dimen>
+    <dimen name="size_38_dp">24dp</dimen>
+    <dimen name="size_24_dp">20dp</dimen>
+    <dimen name="size_20_dp">16dp</dimen>
+    <dimen name="size_16_dp">14dp</dimen>
+    <dimen name="size_54_dp">42dp</dimen>
+    <dimen name="size_36_dp">33dp</dimen>
+    <dimen name="size_60_dp">50dp</dimen>
+    <dimen name="size_14_dp">10dp</dimen>
+    <dimen name="size_10_dp">6dp</dimen>
+    <dimen name="size_28_dp">20dp</dimen>
+    <dimen name="size_30_dp">20dp</dimen>
+    <dimen name="size_26_dp">18dp</dimen>
+    <dimen name="size_8_dp">5dp</dimen>
+
+
+
+
+
+    <dimen name="size_14_sp">10sp</dimen>
+    <dimen name="size_18_sp">14sp</dimen>
+    <dimen name="size_35_sp">22sp</dimen>
+    <dimen name="size_20_sp">16sp</dimen>
+    <dimen name="size_16_sp">14sp</dimen>
+
+
+    <dimen name="size_5_sp">2.5sp</dimen>
+    <dimen name="size_45_sp">25sp</dimen>
+    <dimen name="size_40_sp">20sp</dimen>
+    <dimen name="size_24_sp">20sp</dimen>
+    <dimen name="size_54_sp">42sp</dimen>
+    <dimen name="size_36_sp">33sp</dimen>
+    <dimen name="size_60_sp">50sp</dimen>
+    <dimen name="size_10_sp">6sp</dimen>
+    <dimen name="size_28_sp">20sp</dimen>
+    <dimen name="size_30_sp">20sp</dimen>
+    <dimen name="size_26_sp">18sp</dimen>
+    <dimen name="size_8_sp">5sp</dimen>
+
+    <dimen name="screen_width">320dp</dimen>
+
+    //Welcome
+    <dimen name="welcome_logo">30dp</dimen>
+
+    //onboarding screen
+    <dimen name="onboardScreen_margin_bottom">5dp</dimen>
+    <dimen name="onboardScreen_info_image_width">150dp</dimen>
+    <dimen name="onboardScreen_info_image_height">90dp</dimen>
+    <dimen name="onboardScreen_info_bottom_text_margin_top">5dp</dimen>
+    <dimen name="onboardScreen_info_bottom_text1_margin_top">5dp</dimen>
+
+
+
+
+</resources>

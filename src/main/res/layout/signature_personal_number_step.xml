@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.signature.ui.SignatureViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:stateListAnimator="@animator/appbar_not_elevated">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="pin">
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appbar"
+        android:layout_above="@id/button_next"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingLeft="@dimen/size_26_dp"
+            android:paddingRight="@dimen/size_26_dp"
+            android:paddingTop="@dimen/size_5_dp">
+
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_8_dp"
+                android:gravity="start"
+                android:text="@string/owner_of_grid_contract"
+                android:textAppearance="@style/TextAppearance.SubtitleBold"
+                app:layout_constraintBottom_toTopOf="@+id/descriptionTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_8_dp"
+                android:layout_marginBottom="@dimen/size_16_dp"
+                android:gravity="start"
+                android:text="@string/personal_number_clarification"
+                android:textAppearance="@style/TextAppearance.PlaceHolder"
+                app:layout_constraintBottom_toTopOf="@+id/personalNumberTextInputLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/personalNumberTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_30_dp"
+                android:gravity="start"
+                android:hint="@string/personal_number"
+                android:paddingTop="2dp"
+                app:errorMsg="@{viewModel.signatureErrors.personalNumberError}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTextView">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/personalNumberTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:digits="123456789 0-"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:maxLength="12"
+                    android:onTextChanged="@{viewModel.personalNumberStepValidationTextWatcher}"
+                    android:privateImeOptions="nm"
+                    android:singleLine="true"
+                    android:text="@={viewModel.signatureInput.personalNumber}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                app:layout_constraintTop_toBottomOf="@+id/personalNumberTextInputLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/size_20_dp"
+                android:id="@+id/retailContainerLayout"
+                android:visibility="@{ ( !viewModel.retailStateHandler.isRetailCustomer &amp;&amp; viewModel.retailStateHandler.canBecomeRetailCustomer) ? View.VISIBLE : View.GONE,default=gone}"
+                android:paddingLeft="2dp"
+                tools:visibility="visible"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/retailEnableToggle"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:checked="@={viewModel.signatureInput.signUpForRetail}"
+                    android:thumb="@drawable/switch_custom_thumb"
+                    app:switchMinWidth="30dp"
+                    android:onCheckedChanged="@{viewModel.checkChangeListener}"
+                    app:track="@drawable/switch_control" />
+
+                <TextView
+                    android:id="@+id/takeCare"
+                    android:textColor="@color/green_1"
+                    android:textAppearance="@style/TextAppearance.LightSanSerif"
+                    android:text="@string/take_care_label"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/label1"
+                    android:layout_marginTop="3dp"
+                    android:textColor="@color/grey3"
+                    android:textAppearance="@style/TextAppearance.MediumSanSerif"
+                    android:text="@string/replace_power_label"
+                    android:textSize="@dimen/size_14_sp"
+                    app:layout_constraintTop_toBottomOf="@+id/takeCare"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/label2"
+                    android:layout_marginTop="3dp"
+                    android:lineSpacingExtra="1dp"
+                    android:textColor="@color/grey3"
+                    android:textAppearance="@style/TextAppearance.LightSanSerif"
+                    android:text="@string/retail_signup_tc"
+                    android:textSize="@dimen/size_14_sp"
+                    app:layout_constraintTop_toBottomOf="@+id/label1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/label3"
+                    android:textColor="@color/green_1"
+                    android:textAppearance="@style/TextAppearance.LightSanSerif"
+                    android:text="@string/retail_agreement_link_label"
+                    android:textSize="@dimen/size_14_sp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintTop_toBottomOf="@+id/label2"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60_dp"
+            android:textAllCaps="false"
+            android:textAppearance="@style/TextAppearance.BoldSanSerif"
+            android:textSize="@dimen/size_18_sp"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:background="@color/new_green"
+            android:text="@string/proceed" />
+
+    </RelativeLayout>
+</layout>

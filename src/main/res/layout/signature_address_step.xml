@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.signature.ui.SignatureViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:stateListAnimator="@animator/appbar_not_elevated">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@android:color/transparent"
+                    app:layout_collapseMode="pin">
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:layout_below="@id/appbar"
+            android:id="@+id/scrollView"
+            android:layout_above="@id/button_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+           >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingBottom="@dimen/size_20_dp"
+                android:paddingLeft="@dimen/size_20_dp"
+                android:paddingRight="@dimen/size_20_dp">
+
+                <TextView
+                    android:id="@+id/titleTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8_dp"
+                    android:gravity="start"
+                    android:text="@string/check_address"
+                    android:textAppearance="@style/TextAppearance.SubtitleBold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8_dp"
+                    android:gravity="start"
+                    android:text="@string/check_the_address"
+                    android:textAppearance="@style/TextAppearance.PlaceHolder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/streetAddressTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_30_dp"
+                    android:gravity="start"
+                    android:hint="@string/street_address"
+                    android:paddingTop="3dp"
+                    app:errorMsg="@{viewModel.signatureErrors.addressError}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionTextView">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/streetAddressTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|textFilter"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:onTextChanged="@{viewModel.addressStepValidationTextWatcher}"
+                        android:privateImeOptions="nm"
+                        android:singleLine="true"
+                        android:text="@={viewModel.signatureInput.address}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/postNumberTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10_dp"
+                    android:gravity="start"
+                    android:hint="@string/postal_code"
+                    app:errorMsg="@{viewModel.signatureErrors.postalCodeError}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/streetAddressTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/postNumberTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="123456789 0"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:onTextChanged="@{viewModel.addressStepValidationTextWatcher}"
+                        android:privateImeOptions="nm"
+                        android:singleLine="true"
+                        android:text="@={viewModel.signatureInput.postalCode}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/postRegionTextLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10_dp"
+                    android:gravity="start"
+                    android:hint="@string/postal_region"
+                    android:inputType="text"
+                    app:errorMsg="@{viewModel.signatureErrors.postalRegionError}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/postNumberTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/postRegionTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:onTextChanged="@{viewModel.addressStepValidationTextWatcher}"
+                        android:privateImeOptions="nm"
+                        android:singleLine="true"
+                        android:text="@={viewModel.signatureInput.postalRegion}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phoneNumberTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_10_dp"
+                    android:hint="Mobilnummer"
+                    app:errorMsg="@{viewModel.signatureErrors.phoneNumberError}"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+
+                    app:layout_constraintTop_toBottomOf="@+id/postRegionTextLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phoneNumberTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="1234567890"
+                        android:imeOptions="actionDone"
+                        android:inputType="number"
+                        android:maxLength="10"
+                        android:onTextChanged="@{viewModel.addressStepValidationTextWatcher}"
+                        android:text="@={viewModel.signatureInput.phoneNumber}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/size_18_sp"
+            android:layout_height="@dimen/size_60_dp"
+            android:textAppearance="@style/TextAppearance.BoldSanSerif"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:background="@color/new_green"
+            android:text="@string/proceed" />
+
+    </RelativeLayout>
+</layout>

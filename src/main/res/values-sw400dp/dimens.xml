@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="snackbar_header_text">16sp</dimen>
+    <dimen name="snackbar_sub_text">14sp</dimen>
+    <dimen name="snackbar_button_padding_vertical">9dp</dimen>
+    <dimen name="snackbar_button_padding_horizontal">16dp</dimen>
+
+    <dimen name="retail_dialog_list_label_title_size">16sp</dimen>
+    <dimen name="retail_dialog_list_label_subtitle_size">14sp</dimen>
+    <dimen name="retail_start_list_row_margin_top">22dp</dimen>
+    <dimen name="retail_start_list_subtitle_margin_top">2dp</dimen>
+
+    <dimen name="retail_dialog_list_label_subtitle_margin_start">37dp</dimen>
+    <dimen name="retail_dialog_list_label_title_margin_start">16dp</dimen>
+
+    <dimen name="heading_1">33sp</dimen>
+    <dimen name="sub_heading_1">18sp</dimen>
+    <dimen name="heading_2">28sp</dimen>
+
+
+    <dimen name="size_5_dp">5dp</dimen>
+    <dimen name="size_45_dp">45dp</dimen>
+    <dimen name="size_40_dp">40dp</dimen>
+    <dimen name="size_24_dp">24sp</dimen>
+    <dimen name="size_20_dp">20dp</dimen>
+    <dimen name="size_16_dp">16dp</dimen>
+    <dimen name="size_10_dp">10dp</dimen>
+    <dimen name="size_28_dp">28dp</dimen>
+    <dimen name="size_30_dp">30dp</dimen>
+    <dimen name="size_54_dp">54dp</dimen>
+    <dimen name="size_36_dp">36dp</dimen>
+    <dimen name="size_60_dp">60dp</dimen>
+    <dimen name="size_38_dp">35dp</dimen>
+
+    <dimen name="size_14_dp">14dp</dimen>
+
+    <dimen name="size_20_sp">20sp</dimen>
+    <dimen name="size_26_dp">26dp</dimen>
+    <dimen name="size_8_dp">8dp</dimen>
+
+
+    <dimen name="size_14_sp">14sp</dimen>
+    <dimen name="size_18_sp">18sp</dimen>
+    <dimen name="size_35_sp">33sp</dimen>
+
+
+    //Welcome
+    <dimen name="welcome_logo">40dp</dimen>
+
+    //onboarding screen
+    <dimen name="onboardScreen_margin_bottom">40dp</dimen>
+    <dimen name="onboardScreen_info_image_width">250dp</dimen>
+    <dimen name="onboardScreen_info_image_height">140dp</dimen>
+    <dimen name="onboardScreen_info_bottom_text_margin_top">40dp</dimen>
+    <dimen name="onboardScreen_info_bottom_text1_margin_top">20dp</dimen>
+
+
+
+</resources>

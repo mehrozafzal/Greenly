@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.signature.ui.SignatureViewModel"/>
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<com.google.android.material.appbar.AppBarLayout-->
+            <!--android:id="@+id/appbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+
+            <!--<androidx.appcompat.widget.Toolbar-->
+                <!--android:id="@+id/toolbar"-->
+                <!--app:navigationIcon="@drawable/ic_close_black_24dp"-->
+                <!--app:navigationOnClickListener="@{() -> viewModel.exit()}"-->
+                <!--app:onMenuItemClickListener="@{(item) -> viewModel.menuItemClicked(item.itemId)}"-->
+                <!--app:title="@string/fetch_data"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="?attr/actionBarSize">-->
+            <!--</androidx.appcompat.widget.Toolbar>-->
+        <!--</com.google.android.material.appbar.AppBarLayout>-->
+
+        <!--<com.stepstone.stepper.StepperLayout-->
+            <!--android:id="@+id/stepper"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"-->
+            <!--app:ms_activeStepColor="@color/accent"-->
+            <!--app:ms_backButtonText="@string/back"-->
+            <!--app:ms_backButtonColor="@color/accent"-->
+            <!--app:ms_completeButtonText="@string/done"-->
+            <!--app:ms_completeButtonColor="@color/accent"-->
+            <!--app:ms_nextButtonText="@string/next"-->
+            <!--app:ms_nextButtonColor="@color/accent"-->
+            <!--app:ms_stepperFeedbackType="content_overlay|content_progress|disabled_bottom_navigation|disabled_content_interaction"-->
+            <!--app:ms_stepperType="dots"/>-->
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </RelativeLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.competefriend.ui.CompeteFriendViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/competeFriend_topBar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_60_dp"
+                android:background="@color/green_3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/compete_friend_title"
+                    android:textAppearance="@style/TextAppearance.Title"
+                    android:textColor="@color/white"
+                    android:layout_centerInParent="true"/>
+
+                <ImageView
+                    android:visibility="gone"
+                    android:id="@+id/competeFriend_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/history_icon"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/size_20_dp"
+                    android:layout_centerVertical="true" />
+
+                <ImageView
+                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/chat_icon"
+                    android:layout_toLeftOf="@+id/competeFriend_profile"
+                    android:layout_marginEnd="@dimen/size_20_dp"
+                    android:layout_centerVertical="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@color/grey16"
+
+                >
+
+                <ImageView
+                    android:id="@+id/competeFriend_superHeroImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/super_hero"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/size_40_dp" />
+
+                <TextView
+                    android:id="@+id/competeFriend_subTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/compete_friend_titleTxt"
+                    android:layout_marginTop="@dimen/size_20_dp"
+                    android:layout_centerHorizontal="true"
+                    android:textSize="@dimen/size_18_sp"
+                    android:layout_below="@+id/competeFriend_superHeroImage"
+                    android:textAppearance="@style/TextAppearance.Body2" />
+
+                <Button
+                    android:id="@+id/competeFriend_inviteUserBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_54_dp"
+                    android:layout_marginTop="@dimen/size_30_dp"
+                    android:background="@drawable/green_rounded_button"
+                    android:text="Lagg till en van"
+                    android:textAppearance="@style/TextAppearance.Body4"
+                    android:textSize="@dimen/size_18_sp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="@dimen/size_40_dp"
+                    android:layout_marginEnd="@dimen/size_40_dp"
+                    android:layout_below="@+id/competeFriend_subTitle" />
+
+                <TextView
+                    android:id="@+id/competeFriend_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hur funkar det? Läs här!"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/size_20_dp"
+                    android:textSize="@dimen/size_18_sp"
+                    android:textAppearance="@style/TextAppearance.Body4"
+                    android:textColor="@color/new_green"
+                    android:layout_below="@+id/competeFriend_inviteUserBtn"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/loader"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

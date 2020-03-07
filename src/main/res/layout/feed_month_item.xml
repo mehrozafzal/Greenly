@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <variable
+            name="monthlyReport"
+            type="greenely.greenely.feed.models.feeditems.MonthlyReport" />
+
+        <variable
+            name="headerModel"
+            type="greenely.greenely.views.ConsumptionForTimeRangeHeader.Model" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginLeft="@dimen/feed_item_margin"
+        android:layout_marginRight="@dimen/feed_item_margin"
+        android:layout_marginTop="@dimen/feed_item_margin_vertical"
+        android:layout_marginBottom="@dimen/feed_item_margin_vertical"
+        app:cardCornerRadius="@dimen/feed_item_radius">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp">
+
+
+
+            <ImageView
+                android:id="@+id/logo"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="@dimen/size_20_dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_greenely_icon"
+                app:layout_constraintBottom_toTopOf="@id/sep"
+                app:layout_constraintVertical_bias="0.2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:lines="1"
+                android:textAllCaps="true"
+                android:text="@{monthlyReport.title}"
+                android:textAppearance="@style/TextAppearance.FeedHeading"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/logo"
+                app:layout_constraintRight_toLeftOf="@id/new_marker"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Månadsrapport" />
+
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.FeedSubTitle"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/logo"
+                android:text='@{headerModel.timeRange, default=""}'
+                app:layout_constraintRight_toLeftOf="@id/new_marker"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                tools:text="December" />
+
+            <TextView
+                android:id="@+id/new_marker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/feed_new_marker_background"
+                android:paddingLeft="8dp"
+                android:paddingTop="4dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="4dp"
+                android:text="@string/new_marker_text"
+                android:textAppearance="@style/TextAppearance.Caption"
+                android:textColor="@color/white"
+                android:visibility="@{monthlyReport.newEntry ? View.VISIBLE : View.GONE, default=gone}"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <View
+                android:id="@+id/sep"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey7"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+
+            <LinearLayout
+                android:id="@+id/containerLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sep">
+
+                <TextView
+                    android:id="@+id/avgConsumption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{headerModel.consumption, default=""}'
+                    android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold"
+                    android:textColor="@color/green_1"
+                    android:textSize="60sp"
+                    tools:text="247" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:text="@string/kWh"
+                    android:textAppearance="@style/TextAppearance.LightSanSerif"
+                    android:textColor="@color/green_1"
+                    android:textSize="35sp" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:paddingLeft="45dp"
+                android:paddingRight="45dp"
+                android:text="@{monthlyReport.body}"
+                android:textAppearance="@style/TextAppearance.LightSanSerif"
+                android:textColor="@color/black_1"
+                android:textSize="17sp"
+                android:lineSpacingExtra="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/containerLayout"
+                tools:text="Under vecka 14 var din totala elanvändning 274 kWh" />
+
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/chartArea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="16dp"
+                    android:textAppearance="@style/TextAppearance.LightSanSerif"
+                    android:textColor="@color/grey10"
+                    android:textSize="8sp"
+                    android:text="@string/kWh" />
+
+                <view
+                    android:id="@+id/chart"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    class="com.github.mikephil.charting.charts.CombinedChart"
+                    android:layout_width="match_parent"
+                    android:minHeight="200dp"
+                    android:layout_height="wrap_content"
+                     />
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <greenely.greenely.feed.ui.costanalysis.RoundedCornerLayout
+                        android:id="@+id/indicatorView1"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/green_1" />
+
+                    <TextView
+                        android:id="@+id/label1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/usage_label_chart"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey8"
+                        android:textSize="@dimen/legend_text_size"
+                        tools:text="Elanvändning" />
+
+                    <greenely.greenely.feed.ui.costanalysis.RoundedCornerLayout
+                        android:id="@+id/indicatorView2"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/yellow1" />
+
+                    <TextView
+                        android:layout_marginRight="2dp"
+                        android:id="@+id/label2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/price_lable"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey8"
+                        android:textSize="@dimen/legend_text_size"
+                         />
+
+                    <greenely.greenely.feed.ui.costanalysis.RoundedCornerLayout
+                        android:id="@+id/indicatorView3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@color/blue1" />
+
+                    <TextView
+                        android:id="@+id/label3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="2dp"
+                        android:text="@string/temperature_label_chart"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey8"
+                        android:textSize="@dimen/legend_text_size"
+                         />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</layout>
+
+
+
+
+

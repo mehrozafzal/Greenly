@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+
+        <variable
+            name="homeModel"
+            type="greenely.greenely.home.models.HomeModel" />
+
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:text="@{homeModel.stateTitle}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LightSanSerif"
+            android:textColor="@color/black_1"
+            android:textSize="@dimen/size_18_sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Augusti" />
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/size_8_dp"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp">
+            <TextView
+                android:id="@+id/percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10_dp"
+                android:gravity="top"
+                android:text="@{homeModel.comparisonPercentage}"
+                android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold.Green"
+                android:textSize="80sp"
+                android:layout_gravity="bottom"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="35" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_gravity="bottom"
+                android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold.Green"
+                android:textSize="50sp"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/percentage"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="%" />
+
+        </LinearLayout>
+
+
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_24_dp"
+            android:layout_marginEnd="@dimen/size_24_dp"
+            android:gravity="center|top"
+            android:textAppearance="@style/TextAppearance.LightSanSerif"
+            android:textColor="@color/grey3"
+            android:textSize="@dimen/size_18_sp"
+            android:text="@{homeModel.extraText}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container"
+            tools:text="Din elanvändning i jämförelse med hushåll som har villa, frånluftspump, 3 personer, 120-149 kvadratmeter." />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="divider_color">#DEDEDE</color>
+    <color name="line_gradient_start">#100000FF</color>
+    <color name="line_gradient_end">#800000FF</color>
+    <color name="tool_tip_background_color">#DD000000</color>
+    <color name="splash_background">#e5f7fb</color>
+    <color name="comparison_me">#b20dbbde</color>
+    <color name="comparison_others">#b2f1cd09</color>
+    <color name="comparison_top">#b21caa2f</color>
+    <color name="temperature_line_color">#f6a623</color>
+    <color name="consumption_color">#0dbbde</color>
+    <color name="navigation_bar_color">#1caa2f</color>
+    <color name="navigation_highlight_color">#151429</color>
+    <color name="pager_bullet_active">#000000</color>
+    <color name="pager_bullet_inactive">#FFFFFF</color>
+    <color name="navigation_bar_unselectable_color">#c3c3c3</color>
+    <color name="distribution_circle_background">#dbecf8</color>
+    <color name="min_max_min_color">#1caa2f</color>
+    <color name="min_max_max_color">#f6a623</color>
+    <color name="axis_value_text_color">#89000000</color>
+    <color name="feed_new_marker_background_color">#1caa2f</color>
+    <color name="feed_chart_color">#1caa2f</color>
+
+    <color name="black">#333333</color>
+    <color name="jetBlack">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent_white">#63FFFFFF</color>
+
+    <color name="intro_screen_base">#0A95B1</color>
+    <color name="indicator_blue">#56BCD0</color>
+
+    <color name="customer">#ff5c50</color>
+    <color name="shadow">#39ffffff</color>
+    <color name="consumption_chart">#1d9f5b</color>
+
+    <color name="flat_button_select_color">#50999999</color>
+    <color name="accent">#1caa2f</color>
+    <color name="temperature">#03a94f</color>
+    <color name="app_background">#F6F6F6</color>
+    <color name="estimated_background">#CFCFCF</color>
+    <color name="transparent">#33000000</color>
+
+    <color name="semi_circle_background">#e7e7e7</color>
+    <color name="semi_circle_circle_background">#d7d7d7</color>
+
+    <color name="meter_current">#5c8130</color>
+    <color name="meter_potential">#a0c527</color>
+    <color name="meter_tick">#dedede</color>
+    <color name="meter_marker">#333333</color>
+
+    <color name="consumption_me">#03a9f4</color>
+    <color name="consumption_top">#ffc107</color>
+    <color name="consumption_others">#4caf50</color>
+    <color name="consumption_me_selected">#1976d2</color>
+    <color name="price">#fdd835</color>
+
+    <color name="consumption_history_selected">#0D47A1</color>
+    <color name="consumption_history_unselected">#2196F3</color>
+    <color name="consumption_history_estimated_color">#CFCFCF</color>
+    <color name="consumption_history_estimated_selected_color">#1976D2</color>
+
+    <color name="signature_progress">#ff5c50</color>
+    <color name="orange">#F5A052</color>
+    <color name="signature_done">#AFCB37</color>
+
+    <color name="check_box_checked">#AFCB37</color>
+    <color name="check_box_unchecked">#999999</color>
+
+    <color name="text_primary">#333333</color>
+    <color name="text_secondary">#999999</color>
+
+    <color name="grey">#c3c3c3</color>
+    <color name="grey2">#8f8f8f</color>
+    <color name="grey3">#4e4e4e</color>
+    <color name="grey4">#a4a4a4</color>
+    <color name="grey5">#cbcbcb</color>
+    <color name="grey6">#BCBCBC</color>
+    <color name="grey7">#d4d4d4</color>
+    <color name="grey8">#868686</color>
+    <color name="grey9">#e5e5e5</color>
+    <color name="grey10">#a9a9a9</color>
+    <color name="grey11">#e6e6e6</color>
+    <color name="grey12">#F5F4F4</color>
+    <color name="grey13">#959595</color>
+    <color name="grey14">#949494</color>
+    <color name="grey15">#ababab</color>
+    <color name="grey16">#f9f9f9</color>
+    <color name="grey17">#f6f6f6</color>
+    <color name="grey18">#878787</color>
+    <color name="grey19">#dedede</color>
+    <color name="grey20">#ededed</color>
+    <color name="grey21">#8f8f8f</color>
+    <color name="grey22">#4F4F4F</color>
+    <color name="grey23">#828282</color>
+
+
+    <color name="blue1">#34cfed</color>
+    <color name="blue2">#2196F3</color>
+
+
+    <color name="black_1">#222222</color>
+    <color name="black_2">#000000</color>
+
+    <color name="green_1">#25c672</color>
+    <color name="green_2">#26c974</color>
+    <color name="green_3">#23b669</color>
+
+
+    <color name="home_radio_button_color">#25c672</color>
+    <color name="history_radio_button_color">#1da75f</color>
+    <color name="friendList_radio_button_color">#1da75f</color>
+
+
+    <color name="error_text_color">#FF0000</color>
+
+
+    <color name="new_green">#25c672</color>
+    <color name="transparent_new_green">#8325C672</color>
+    <color name="switch_color">#4cd964</color>
+    <color name="lime_green">#115e36</color>
+
+
+    <color name="yellow1">#f5dc52</color>
+    <color name="yellow2">#fcc11f</color>
+    <color name="yellow3">#f5dc53</color>
+    <color name="yellow4">#F5DC52</color>
+
+
+    <color name="lightning_yellow">#FCC11F</color>
+
+    <color name="light_font">#FBFBFB</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="text_shadow">#7F000000</color>
+    <color name="text_shadow_white">#FFFFFF</color>
+
+    <color name="history_green_bar_color">#1da75f</color>
+
+    <color name="white_1">#DFF7F3F3</color>
+
+    <color name="semi_transparent">#D8000000</color>
+    <color name="settings_profile_letter_background">#DADADA</color>
+
+
+</resources>

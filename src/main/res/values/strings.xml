@@ -1,0 +1,927 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="inbox_push_message_event">greenely.greenely._events.INBOX</string>
+    <string name="inbox_push_message_dismissed_event">
+        greenely.greenely._events.INBOX_NOTIFICATION_DISMISSED
+    </string>
+    <string name="inbox_push_message_clicked_event">
+        greenely.greenely._events.INBOX_NOTIFICATION_CLICKED_EVENT
+    </string>
+    <string name="appsflyer_dev_key">7dNDqsDs3eXbg3hhCjzpsZ</string>
+    <!--<string name="google_app_id" tools:ignore="UnusedResources">145017322928</string>-->
+    <string name="unexpected_error">Oväntat fel</string>
+    <string name="email">E-postaddress</string>
+    <string name="password">Lösenord</string>
+    <string name="create_account">Skapa ett konto</string>
+    <string name="create_account2">Skapa konto</string>
+    <string name="okay">Okej</string>
+    <string name="uploading_signature">Skickar signatur</string>
+
+    <string name="i_accept">Genom att skapa ett konto \ngodkänner du <font color="#1caa2f">användarvillkoren</font></string>
+    <string name="user_agreement">Användarvillkor</string>
+    <string name="provide_email_and_password">Ange e-postadress och lösenord</string>
+    <string name="provide_email_and_choose_password">Ange en e-postadress och ett \nvalfritt lösenord.</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nej</string>
+    <string name="no_thank_you">Nej tack</string>
+    <string name="kWh">kWh</string>
+    <string name="x_percent_done">%d%% klar</string>
+    <string name="next">Nästa</string>
+    <string name="message">Meddelande</string>
+    <string name="faq">Frågor och svar</string>
+    <string name="help">Hjälp</string>
+    <string name="back">Tillbaka</string>
+    <string name="done">Klar</string>
+    <string name="firstname">Förnamn</string>
+    <string name="lastname">Efternamn</string>
+    <string name="social_security_number">Personnummer (ååmmdd-xxxx)</string>
+    <string name="facility_id">Anläggnings-ID</string>
+
+    <string name="invalid_input">Ogiltigt värde</string>
+    <string name="abort">Avbryt</string>
+    <string name="verification_error">
+        Det uppstod ett problem vid verifieringen.
+        Detta kan bero på att du redan har registrerat ett konto med samma bankID. Kontrollera att
+        du inte redan har ett konto registrerat.
+        Du kan återkomma till den här vyn genom att logga in igen.
+    </string>
+    <string name="undo">Ångra</string>
+    <string name="draw_the_signature">Dra med fingret på skärmen och skriv din signatur.</string>
+    <string name="read_poa">Visa fullmakt</string>
+    <string name="signature_title">Signera</string>
+    <string name="home_title">Hem</string>
+    <string name="compete_friend_title">Vänner</string>
+    <string name="do_you_need_help">Behöver du hjälp?</string>
+    <string name="are_you_sure_abort_title">På väg att avbryta?</string>
+    <string name="are_you_sure_abort_message">
+        Är du säker på att du vill avbryta?
+        \n\nDu kan återvända till det här steget genom att logga in igen.
+    </string>
+    <string name="facility_id_clarification">
+        Ange anläggningsID (18 siffror) står på elfakturan
+    </string>
+    <string name="forgot_password">Glömt lösenord?</string>
+    <string name="provide_email">Ange din e-post nedan</string>
+    <string name="provide_email_clarification">
+        Vi skickar ett e-postmeddelande med ditt användarnamn och länk där du kan återställa ditt lösenord.
+    </string>
+    <string name="reset">Återställ</string>
+    <string name="reset_password">Återställ lösenord</string>
+    <string name="password_reset">
+        Ett e-postmeddelande har skickats till dig med länk för återställning av lösenord.
+    </string>
+
+    <string name="password_reset_title">E-post skickat!</string>
+    <string name="hour">Timme</string>
+    <string name="day">Dag</string>
+    <string name="month">Månad</string>
+    <string name="temperature">temperatur</string>
+    <string name="ore_per_kwh">öre/kWh</string>
+    <string name="municipality">Kommun</string>
+    <string name="my_household">Mitt hushåll</string>
+    <string name="household">hushåll</string>
+    <string name="loading">
+        Laddar…
+    </string>
+    <string name="loading_profile">Vi bygger nu din profil..</string>
+    <string name="yearly_consumption">
+        Årsanvändning
+    </string>
+    <string name="yearly_consumption_clarification">
+        Ange årsanvändning som finns på elfakturan
+    </string>
+    <string name="first_name_clarification">
+        Ange förnamnet som står på elfakturan
+    </string>
+    <string name="last_name_clarification">
+        Ange efternamnet som står på elfakturan
+    </string>
+    <string name="social_security_code_clarification">
+        Ange personnumret som står på elfakturan
+    </string>
+    <string name="open_drawer">
+        Open drawer
+    </string>
+    <string name="close_drawer">
+        Close drawer
+    </string>
+    <string name="my_account">Mitt konto</string>
+    <string name="current_password">Nuvarande lösenord</string>
+    <string name="new_password">Nytt lösenord</string>
+    <string name="repeat_password">Upprepa lösenord</string>
+    <string name="user_firstName">Förnamn</string>
+    <string name="user_lastName">Efternamn</string>
+
+    <string name="password_has_been_changed">Vi har nu bytt ditt lösenord.</string>
+    <string name="password_changed">Lösenord ändrat</string>
+    <string name="change_password">Byt lösenord</string>
+    <string name="upgrade_label">Uppgradera</string>
+    <string name="upgrade_title">Bli elkund hos Greenely</string>
+    <string name="upgrade_sub_title">Få full funktionalitet i appen!</string>
+
+
+    <string name="history">Historik</string>
+    <string name="energy_savings_tips">Sparaktiviteter</string>
+    <string name="yesterday">Igår</string>
+    <string name="inbox">Händelser</string>
+    <string name="logout">Logga ut</string>
+    <string name="unexpected_error_title">Oväntat fel</string>
+    <string name="oops">Oops!</string>
+    <string name="you_need_a_pdf_reader">
+        Du behöver en PDF läsare installerad för att öppna filen
+    </string>
+
+    <string name="explore_my_household">Mitt hem</string>
+    <string name="explore_neighbor">Grannen</string>
+    <string name="explore_most_efficient">Topp 20%</string>
+    <string name="forgot_password_title">Glömt lösenord</string>
+    <string name="show_more">Visa mer</string>
+    <string name="signature_clarification">
+        Hej!
+        \n\nFör att hämta din elanvändning löpande behöver vi ditt anläggnings-ID. Det står på din
+        elräkning eller på ditt elbolags inloggade websidor. Om du betalar din elräkning via
+        e-faktura kan du även hitta ditt anläggnings-ID på fakturan i din internetbank.
+        \n\nOm du själv inte står på elavtalet är det inte ett hinder: låt den personen som tar
+        emot elräkningen signera fullmakten här i appen!
+        \n\nSigneringen görs med fingret direkt på skärmen när du matat in uppgifterna som du hittar
+        på elräkningen.
+    </string>
+    <string name="fetch_data">Hämta data</string>
+    <string name="support">Support</string>
+    <string name="sign_next_step">Skriv under med fingret i nästa steg!</string>
+    <string name="sign_poa_title">Tillåtelse att hämta din elanvändningsdata.</string>
+    <string name="login">Logga in</string>
+    <string name="onwards">Vidare</string>
+    <string name="fetch">Hämta</string>
+    <string name="debug_write_key">4O7KHauTNL6wtw1enGiXMLHi4zHqHwYi</string>
+    <string name="facility_id_pre_fill">735 999</string>
+
+    <string name="is_info_correct_title">Stämmer uppgifterna?</string>
+    <string name="is_info_correct_message">
+        Kontrollera noga att du har skrivit in rätt anläggningsID och att namnet
+        stämmer överens med det som står på elfakturan
+    </string>
+    <string name="proceed">Nästa</string>
+    <string name="sign_with_bankid">Signera med BankID</string>
+    <string name="check">Kontrollera</string>
+
+    <plurals name="new_messages">
+        <item quantity="zero">Inga nya meddelanden</item>
+        <item quantity="one">Nytt meddelande</item>
+        <item quantity="other">%d nya medelanden</item>
+    </plurals>
+
+    <plurals name="plus_unread">
+        <item quantity="zero">Inga olästa</item>
+        <item quantity="one">+%d oläst</item>
+        <item quantity="other">+%d olästa</item>
+    </plurals>
+
+    <string name="cont_chevron_right">Pil höger</string>
+
+    <string name="facility_type">Bostadstyp</string>
+    <string name="heating_type">Värmesystem</string>
+    <string name="construction_year">Byggår</string>
+    <string name="occupants">Personer</string>
+    <string name="facility_area">Boarea (m\u00B2)</string>
+    <string name="facility_area_setting_label">Boarea</string>
+
+    <string name="empty_input_title">Kan ej lämnas tom</string>
+    <string name="please_choose_x">Vänligen välj %s</string>
+    <string name="please_check_municipality">
+        Vänligen säkerställ att du inte lämnar textfältet tomt och att du fyller i rätt kommun.
+    </string>
+    <string name="onboarding_clarification">
+        Vi behöver ställa några frågor om ditt boende för att kunna ge dig anpassade
+        energispartips, preliminär elanvändning, jämförelsedata m.m.
+    </string>
+    <string name="onboarding_wallpaper">
+        Mitt hushåll bakgrund
+    </string>
+    <string name="building_your_profile">
+        Vi bygger nu din profil
+    </string>
+    <string name="user_agreement_error_title">
+        Har du läst användarvillkoren?
+    </string>
+    <string name="user_agreement_error_message">
+        Du måste godkänna användarvillkoren för att skapa ett konto.
+    </string>
+    <string name="repeat_email">Upprepa e-post</string>
+    <string name="email_error_title">
+        E-post ej korrekt
+    </string>
+    <string name="repeat_email_error_message">
+        Upprepad e-post stämmer inte överens med inmatad e-post
+    </string>
+    <string name="email_empty_error_message">
+        Vänligen fyll i din e-post.
+    </string>
+    <string name="promocode_empty_error_message">
+            Vänligen fyll i inbjudningskod
+    </string>
+
+    <string name="password_error_title">
+        Lösenord ej korrekt
+    </string>
+    <string name="password_empty_error_message">
+        Vänligen fyll i ett lösenord.
+    </string>
+    <string name="where_do_you_live">Var bor du?</string>
+    <string name="what_is_your_facility_type">Vad har du för bostad?</string>
+    <string name="what_is_your_heating_system">Vad har du för värmesystem?</string>
+    <string name="when_was_your_house_built">När byggdes din bostad?</string>
+    <string name="how_many_occupants_does_your_household_have">Hur många bor i din bostad?</string>
+    <string name="how_big_is_the_living_area">Hur stor uppvärmd totalyta (m\u00B2)?</string>
+    <string name="what_is_your_yearly_consumption">Vad är din årsanvändning?</string>
+    <string name="price">pris</string>
+    <string name="fetched_data">Hämtad data</string>
+    <string name="estimated_data">Estimerad data</string>
+    <string name="improvement_areas">Förbättringsområden</string>
+    <string name="comparison">Jämförelse</string>
+    <string name="good">Bra</string>
+    <string name="great">Kanon</string>
+    <string name="saving">Besparing</string>
+    <string name="diary">Dagbok</string>
+    <string name="pick_goal">Välj mål</string>
+    <string name="how_much_do_you_want_to_save">Hur mycket vill du spara?</string>
+    <string name="mark_how_much_you_want_to_save">Markera hur mycket du vill spara nedan.</string>
+    <string name="later">Senare</string>
+    <string name="you_must_pick_a_goal">
+        För att kunna lägga till tipset så måste du först välja ett mål.
+    </string>
+    <string name="ongoing">Pågående</string>
+    <string name="completed">Avklarat</string>
+    <string name="activities">Aktiviteter</string>
+    <string name="goal">Mål</string>
+    <string name="details">Detaljer</string>
+    <string name="you_have_saved_so_far">Du har hittills sparat</string>
+    <string name="currency_format">%d kr</string>
+    <string name="step_by_step">Steg för steg:</string>
+    <string name="description">Beskrivning</string>
+    <string name="you_have_x_reminders">Du har %d påminnelser</string>
+    <string name="alarm_notification_clicked">
+        greenely.greenely._events.ALARM_NOTIFICATION_CLICKED
+    </string>
+    <string name="alarm_notification_dismissed">
+        greenely.greenely._events.ALARM_NOTIFICATION_DISMISSED
+    </string>
+    <string name="data_update_event">
+        greenely.greenely._events.DATA_UPDATE
+    </string>
+    <string name="data_update_dismissed">
+        greenely.greenely._events.DATA_UPDATE_DISMISSED
+    </string>
+    <string name="data_update_clicked">
+        greenely.greenely._events.DATA_UPDATE_CLICKED
+    </string>
+    <string name="you_have_a_new_reminder">Du har en ny påminnelse</string>
+    <string name="remind_me">Påminn mig</string>
+    <string name="cancel_alarm_title">Ingen påminnelse?</string>
+    <string name="cancel_reminder_body">
+        Vill du ta bort påminnelsen?
+    </string>
+    <string name="saving_format">%d kr/år</string>
+    <string name="saving_format_new_line">%d\nkr/år</string>
+    <string name="day_format">%1$d\n%2$s</string>
+    <string name="month_year_format">%1$s %2$d</string>
+    <string name="percentage_format">%s%%</string>
+    <string name="temperature_format">%s &#176;C</string>
+    <string name="price_format">%s öre/kWh</string>
+    <string name="consumption_format">%s kWh</string>
+    <string name="add_alarm">Lägg till alarm</string>
+    <string name="do_you_want_to_set_an_alarm">Vill du lägga till ett alarm?</string>
+    <string name="poa_reminder_title">Börja jämföra</string>
+    <string name="poa_reminder_content">
+        Hämta din elfaktura och se hur du ligger till jämfört med dina grannar.
+    </string>
+    <string name="poa_notification_clicked">greenely.greenely.POA_NOTIFICATION_CLICKED</string>
+    <string name="poa_notification_dismissed">greenely.greenely.POA_NOTIFICATION_DISMISSED</string>
+    <string name="poa_reminder_popup_title">Påminn mig senare</string>
+    <string name="empty_reminder">-- : --</string>
+    <string name="goal_picked_status_text">
+        Klicka på plusknappen och välj sparaktiviteter för att nå ditt mål.
+    </string>
+    <string name="back_from_tips_status_text">
+        Bra jobbat! Fyll dagboken med relevanta åtgärder eller rutiner som passar dig.
+    </string>
+    <string name="no_goal_status_text">
+        Välkommen!\nVälj ett mål och börja spara energi.
+    </string>
+    <string name="welcome_status_text_one_or_zero_days">
+        Hur ofta har du utfört dina sparaktiviteter den senaste dagen?
+    </string>
+    <string name="welcome_status_text_more_than_one_day">
+        Hur ofta har du utfört dina sparaktiviteter de senaste %d dagarna?
+    </string>
+    <string name="set_reminder_title">
+        Öka dina chanser!
+    </string>
+    <string name="set_reminder_body">
+        Alla kan glömma. En påminnelse ökar dina chanser att skapa nya rutiner.
+    </string>
+    <string name="set_reminder_positive">Sätt påminnelse</string>
+    <string name="set_reminder_negative">Senare</string>
+    <string name="set_reminder">Sätt påminnelse</string>
+    <string name="add">Lägg till</string>
+    <string name="remove">Ta bort</string>
+    <string name="you_have_new_data">Du har en ny data updatering</string>
+    <string name="new_data">Ny data</string>
+    <string name="congratulations_on_the_new_goal">Bra! Nu har du ett nytt mål att uppnå</string>
+    <string name="cant_reach_goal_title">Gå vidare?</string>
+    <string name="cant_reach_goal_message">
+        Om du fyller mätaren ökar dina chanser att nå ditt mål.
+        Du kan alltid lägga till sparaktiviteter senare.
+    </string>
+    <string name="cant_reach_goal_negative">Lägg till fler</string>
+    <string name="cant_reach_goal_positive">Gå vidare</string>
+    <string name="potential_savings">Potentiell besparing</string>
+    <string name="goal_reached">Din besparing är större än målet!</string>
+    <string name="reached_goal_title">Grattis, mål uppnått!</string>
+    <string name="reached_goal_message">Sätt ett högre mål och spara ännu mer!</string>
+    <string name="reached_goal_positive">Sätt mål</string>
+    <string name="reached_goal_negative">Inte nu</string>
+    <string name="no_tips_status_text">Klicka på plusknappen och välj sparaktiviteter för att nå ditt mål.</string>
+    <string name="all_tips_logged_status_text">Välkommen tillbaka imorgon för att uppdatera dina sparaktiviteter.</string>
+    <string name="highest_goal_status_text">Du har uppnått det högsta målet. Fortsätt med dina goda rutiner</string>
+    <string name="tips_added_status_text">Uppskatta hur väl du utfört dina nya sparaktiviteter det senaste dygnet.</string>
+    <string name="one_time_tip_update_title">Har du utfört aktiviteten?</string>
+    <string name="one_time_tip_update_message">
+        Sparaktiviteten kommer ge löpande besparing. Din totala besparing hittar du via mynt-ikonen.
+    </string>
+    <string name="delete_tip_title">Ta bort aktiviteten?</string>
+    <string name="delete_tip_message">Om du tar bort sparaktiviteten minskar din möjlighet att uppnå ditt mål.</string>
+    <string name="keep">Behåll</string>
+    <string name="remove_tip_status_text">Du kan lägga till aktiviteten igen genom att klicka på plus-knappen.</string>
+    <string name="tonight_at_eight">Ikväll kl 20:30</string>
+    <string name="tomorrow_night_at_eight">Imorgon kväll kl 20:30</string>
+    <string name="consumption">Elanvändning</string>
+    <string name="no_bill_at_hand">Ingen elfaktura nära till hands?</string>
+    <string name="poa_reminder_confirmation_title">Påminnelse vald</string>
+    <string name="poa_reminder_confirmation_body">Du kommer att få en påminnelse på utsatt tid.</string>
+    <string name="alarm_set_snackbar_message">Påminnelse vald</string>
+    <string name="diary_update_notification_clicked">greenely.greenely._events.DIARY_UPDATE_NOTIFICATION_CLICKED</string>
+    <string name="diary_update_notification_dismissed">greenely.greenely._events.DIARY_UPDATE_NOTIFICATION_DISMISSED</string>
+    <string name="diary_update_notification">greenely.greenely._events.DIARY_UPDATE</string>
+    <string name="unexpected_error_body">
+        Oops! Ett oväntat fel inträffade. Starta om appen och försök på nytt.
+        Om det ändå inte fungerar; maila gärna din felanmälan till oss.
+    </string>
+    <string name="unexpected_error_positive">
+        Anmäl
+    </string>
+    <string name="unexpected_error_negative">
+        Inte nu
+    </string>
+    <string name="network_error_title">Nätverksfel</string>
+    <string name="network_error_body">
+        Ett oväntat nätverksfel har uppstått. Vänligen kontrollera ditt nätverk.
+        Om problemet kvarstår; maila gärna din felanmälan till oss
+    </string>
+    <string name="network_error_positive">
+        Anmäl
+    </string>
+    <string name="network_error_negative">
+        Inte nu
+    </string>
+    <string name="send_email">
+        Skicka e-post
+    </string>
+    <string name="error_report_format">Felanmälan: %s</string>
+    <string name="help_report_format">Hjälp: %s</string>
+    <string name="year">År</string>
+    <string name="personal_number">Personnummer (ÅÅÅÅMMDD-XXXX)</string>
+    <string name="verifying">Verifierar</string>
+    <string name="no_data">Ingen data</string>
+    <string name="electrical_consumption">Elanvändning</string>
+    <string name="history_fetch_data_message">För att visa din elanvändning behöver vi några uppgifter från din elfaktura och ett OK från dig som står på avtalet.</string>
+    <string name="fetching_your_consumption">Hämtar data för elanvändning…</string>
+    <string name="history_fetching_data_message">Vi har nu kontaktat ditt elnätsbolag. Om allt går bra så kommer du kunna se din elanvändning inom en vecka.</string>
+    <string name="temp_and_price">Temperatur &amp; elpris</string>
+    <string name="temperature_unit">°C</string>
+    <string name="no_data_for_period_title">Hoppsan, det finns inget data för perioden!</string>
+    <string name="no_data_for_period_message">Detta kan bero på att vi inte har fått in data för perioden från ditt elnätsbolag än eller att din elmätare saknar timmätning.</string>
+    <string name="consumption_per">Elanvändning / %s</string>
+    <string name="invalid_email_error_message">Ogiltig e-postadress</string>
+    <string name="facility_type_error">Du måste ange en bostadstyp</string>
+    <string name="heating_type_error">Du måste ange värmesystem</string>
+    <string name="construction_year_error">Du måste ange byggår</string>
+    <string name="facility_area_error">Du måste ange boarea</string>
+    <string name="occupants_error">Du måste ange antal personer</string>
+    <string name="electric_car_error">Du måste ange antal elbilar</string>
+    <string name="car_count_label">Antal elbilar</string>
+
+    <string name="are_you_sure_abort_general_message">Är du säker på att du vill avbryta?</string>
+    <string name="get_started">Kom igång!</string>
+    <string name="missing_poa_title">Tillåtelse att hämta din elanvändningsdata</string>
+    <string name="waiting_for_data_title">Hämtar data för din elanvändning</string>
+    <string name="missing_poa_subtitle">För att vi ska kunna hämta din elanvändningsdata från ditt elbolag behöver vi några uppgifter från din elfaktura och ett OK från dig som står på avtalet.</string>
+    <string name="waiting_for_data_subtitle">Vi har nu kontaktat ditt elbolag. Om allt går bra så kommer du kunna se din elanvändning inom en vecka.</string>
+    <string name="last_6_months">Senaste 6 månaderna</string>
+    <string name="settings">Inställningar</string>
+    <string name="x_kwh">%s kWh</string>
+    <string name="signature">Signatur</string>
+    <string name="channel_description">Kanalen för alla notifikationer från greenely</string>
+    <string name="poa_path">static/fullmakt_bankid.pdf</string>
+    <string name="combined_poa_path">/static/fullmakt_kombinerad.pdf</string>
+    <string name="retail_poa_path">/static/fullmakt_elhandel.pdf</string>
+
+    <string name="userterms_file_path_production">https://api2.greenely.com/static/terms.pdf</string>
+    <string name="userterms_file_path_staging">https://stagingapi.greenely.com/static/terms.pdf</string>
+    <string name="me">Mitt hem</string>
+    <string name="others">Liknande hushåll</string>
+    <string name="top">Topp 20%</string>
+    <string name="well_done">Bra jobbat!</string>
+    <string name="signature_done_description">Vi har nu skickat fullmakten till både dig och ditt elnätsbolag. Om allt går bra så kommer du att kunna se din elanvändning inom en vecka.</string>
+    <string name="needs_poa_title">Förbrukningsdata inte tillgängligt</string>
+    <string name="needs_poa_body">Din förbrukningsdata från ditt elnätsbolag har ännu inte inkommit</string>
+
+    <string name="awaiting_data_title">awaiting_data_title</string>
+    <string name="awaiting_data_body">awaiting_data_body</string>
+    <string name="no_content_title">Ingen timdata tillgänglig</string>
+    <string name="no_content_body">Om du inte ser timdata här, så beror det på att ditt elnätsbolag ännu inte har börjat skicka timdata till Greenely.
+        \n\nAll data för tiden innan du startade kontot kommer inte vara på timnivå utan enbart månadsnivå.</string>
+    <string name="consumption_description_format">Totalt för %s</string>
+    <string name="temperature_title">Din elanvändning i förhållande till temperatur</string>
+    <string name="degree_celsius">°C</string>
+    <string name="distribution_title_month">Din energianvändning under dygnet (%)</string>
+    <string name="night">Natt</string>
+    <string name="evening">Kväll</string>
+    <string name="s_to_s">%1$s-%2$s</string>
+    <string name="min_max_title">Din elanvändning mest/minst</string>
+    <string name="consumed_min">Elanvändning minst</string>
+    <string name="consumed_max">Elanvändning mest</string>
+    <string name="week_x">Vecka %s</string>
+    <string name="contact_us">Kontakta oss</string>
+    <string name="show_stats_for_days">Visa statistik för dagar</string>
+    <string name="greenely_email">support@greenely.se</string>
+    <string name="your_consumption">Din elanvändning</string>
+    <string name="distribution_title_year">Din genomsnittliga energianvändning under ett dygn (%)</string>
+    <string name="distribution_title">Din elanvänding under dygnet (%)</string>
+
+    <string name="retry">Försök igen</string>
+    <string name="new_marker_text">Nytt</string>
+    <string name="no_more_events">Det finns inga fler händelser</string>
+    <string name="address" tools:ignore="Typos">Adress</string>
+    <string name="street_address">Gatuadress</string>
+    <string name="solar_analysis_address_clarification" tools:ignore="Typos">
+        Vi behöver din adress för att samla in solinstrålningsdata för ditt område.
+    </string>
+    <string name="solar_analysis">Solcellsanalys</string>
+    <string name="size_of_the_roof">Takets storlek</string>
+    <string name="solar_analysis_roof_size_description">
+        Ange takets ungefärliga storlek nedan.
+    </string>
+    <string name="size">Storlek</string>
+    <string name="roof_size_small">Litet</string>
+    <string name="roof_size_medium">Medel </string>
+    <string name="roof_size_big">Stort</string>
+    <string name="tight_angle">ca 0–10°</string>
+    <string name="medium_angle">ca 11–30°</string>
+    <string name="wide_angle">ca 31–60°</string>
+    <string name="tight_angle_title">Flackt</string>
+    <string name="medium_angle_title">Medel</string>
+    <string name="wide_angle_title">Brant</string>
+    <string name="roof_angle_title">Takets lutning</string>
+    <string name="roof_angle_description">
+        Ange ditt taks ungefärliga lutning nedan.
+    </string>
+    <string name="roof_direction_title">Takets riktning</string>
+    <string name="roof_direction_label">Välj det alternativ som är närmast</string>
+    <string name="roof_direction_description">
+        Ange takytans ungefärliga riktning
+    </string>
+    <string name="roof_direction_description2">(välj den sida som har mest sol)</string>
+    <string name="west">Väster</string>
+    <string name="south_west">Sydväst</string>
+    <string name="south">Söder</string>
+    <string name="south_east">Sydost</string>
+    <string name="east">Öster</string>
+    <string name="west_label">V</string>
+    <string name="south_west_label">SV</string>
+    <string name="south_label">S</string>
+    <string name="south_east_label">SÖ</string>
+    <string name="east_label">Ö</string>
+    <string name="x_currency">%s kr</string>
+    <string name="x_currency_per_year">/år</string>
+    <string name="x_months">%s månader</string>
+    <string name="x_years">%s år</string>
+    <string name="roof_angle_missing_error">Takets lutning krävs och kan inte utelämnas.</string>
+    <string name="roof_direction_missing_error">Takets riktning krävs och kan inte utelämnas.</string>
+    <string name="roof_size_missing_error">Takets storlek krävs och kan inte utelämnas.</string>
+    <string name="production">Produktion</string>
+    <string name="name">Namn</string>
+    <string name="phone_number">Telefonnummer</string>
+    <string name="i_would_like_to_be_contacted">Jag vill gärna bli kontaktad</string>
+    <string name="your_information">Dina uppgifter</string>
+    <string name="contact_info_clarification">Fyll i uppgifterna nedan för att bli kontaktad för en kostnadsfri rådgivning.</string>
+    <string name="solar_analysis_contact_info_description">Fyll i dina uppgifter för att få upp till 4 st kostnadsfria offerter från lämpliga installatörer. Dina uppgifter behandlas säkert och kommer att enbart användas för detta syfte.</string>
+    <string name="send">Skicka</string>
+    <string name="contact_information_sent">Förfrågad skickad. Tack för din miljöinsats! Du kommer inom kort bli kontaktad av våra solcellsrådgivare.</string>
+    <string name="contact_info_sent_description">Du kommer inom kort bli kontaktad av en av våra solcellsrådgivare.</string>
+    <string name="could_not_send_contact_information">Vänligen försök igen. Kontakta oss på support@greenely.se om problemet kvarstår.</string>
+    <string name="phone_number_required">Vänligen fyll i ditt mobilnummer</string>
+    <string name="name_required">Vänligen fyll i ditt namn</string>
+    <string name="invalid_phone_number">Ogiltigt telefonnummer</string>
+    <string name="invalid_phone_number_start_with_07">Ogiltigt telefonnummer. Börja med 07.</string>
+    <string name="can_not_be_empty">Kan inte lämnas tom</string>
+    <string name="CONTACT_INFO_SENT">greenely.greenely.CONTACT_INFO_SENT</string>
+    <string name="estimated_production">Uppskattad produktion</string>
+    <string name="postal_code">Postnummer</string>
+    <string name="postal_region">Postort</string>
+    <string name="solar_analysis_completed_clarification">Vill du bli kontaktad av en av våra solcellsrådgivare kostnadsfritt som kan hjälpa dig hitta en lämplig leverantör i närområdet?</string>
+    <string name="roof_size_small_subtitle">ca 35 – 45 m²</string>
+    <string name="roof_size_medium_subtitle">ca 46 – 60 m²</string>
+    <string name="roof_size_big_subtitle">ca 61 – 75 m²</string>
+    <string name="messages">Meddelanden</string>
+    <string name="data_updates">Data uppdateringar</string>
+    <string name="new_message">Nytt meddelande</string>
+    <string name="press_next_if_information_is_correct">Tryck nästa om uppgifterna stämmer</string>
+    <string name="adress">Address</string>
+    <string name="sign_clarification">Den som står på elnätsavtalet behöver skriva en signatur.</string>
+    <string name="personal_number_clarification">
+        För att koppla upp din bostad behöver du ange personuppgifter för den person som står på elavtalet.
+    </string>
+    <string name="invalid_personal_number">Formatet måste vara ååmmdd-xxxx</string>
+    <string name="i_already_have_my_facility_id">Jag har redan mitt anläggningsid och vill fylla i det manuellt för att påskynda inhämtningen av min data</string>
+    <string name="invalid_facility_id">Ogiltigt anläggnings id</string>
+    <string name="guidance_title">Guidance</string>
+    <string name="analysis">Analyser</string>
+    <string name="analysis_subtitle">Intresserad av solceller?</string>
+    <string name="analysis_text">Gör en enkel analys för att ta reda på om ditt tak lämpar sig för solceller och lär dig mer om investeringskostnad, återbetalningstid m.m.</string>
+    <string name="ok">OK</string>
+    <string name="offerings_title">Erbjudanden</string>
+    <string name="energy_tips_title">Energitips</string>
+    <string name="guide_and_articles">Guider och artiklar</string>
+    <string name="tip">Tip</string>
+    <string name="offer">Offer</string>
+    <string name="article">Article</string>
+    <string name="chat">Chat</string>
+    <string name="facility_id_setting_label">Anläggnings ID</string>
+
+
+    <string name="app_name">Greenely</string>
+
+    <string name="gcm_sender_id">145017322928</string>
+
+    <string name="welcome_appname">Välkommen till\nGreenely</string>
+    <string name="welcome_message">
+        Vi gör ditt energibeteende synligt och hjälper dig bli mer energismart
+    </string>
+
+    <string name="release_write_key">6VRczFaC4kSWOLZT6d3t4QWrs11Rrukj</string>
+    <string name="if_you_still_need_help">
+        Om du fortfarande behöver hjälp så klicka "Ja" för att skicka ett mail till
+        support@greenely.se
+    </string>
+
+    <string name="support_email">
+        support@greenely.se
+    </string>
+    <string name="facebook_app_id">360979667613542</string>
+    <string name="inspiration">Vänner</string>
+    <string name="start_solar_analysis">Påbörja solcellsanalys!</string>
+    <string name="guidance">Inspiration</string>
+
+    <string name="check_address" tools:ignore="Typos">Bostadens adress</string>
+    <string name="check_the_address">Fyll i uppgifterna nedan för den bostad som du vill hämta data för.</string>
+    <string name="can_only_contain_digits">Får endast innehålla siffror</string>
+    <string name="does_not_contain_full_digits">Postnummer måste vara 5 siffror</string>
+    <string name="owner_of_grid_contract">Ägare av elavtal</string>
+    <string name="sign_power_of_attorney">Signera fullmakt</string>
+    <string name="complete">Klart!</string>
+    <string name="signature_complete_body">Vi har nu skickat fullmakten till både dig och ditt elnätsbolag. Om allt går bra så kommer du att kunna se din elförbrukning inom några veckor.</string>
+    <string name="ok_lets_begin" tools:ignore="Typos">Ok, då börjar vi…</string>
+    <string name="personal_number_not_long_enough">Personnumret är inte långt nog</string>
+    <string name="personal_number_not_valid">Vänligen kontrollera personnumret</string>
+    <string name="clear_signature">Rensa signatur</string>
+    <string name="owner_of_gridcontract">Ägare av elnätsavtal</string>
+
+    <string name="waiting_for_zavanne_text">Vi notifierar dig när du kan börja följa din elanvändning.</string>
+    <string name="waiting_for_zavanne_state_title">Kontaktar ditt elnätsbolag…</string>
+    <string name="zavanne_error_state_title">Ajdå, nu gick visst något fel</string>
+    <string name="zavanne_error_text" tools:ignore="Typos">Vänligen kontrollera att uppgifterna stämmer och försök igen. Skriv in till oss om det fortfarande inte skulle gå.</string>
+    <string name="missing_poa_text">Påbörja inhämtning av din data helt kostnadsfritt.</string>
+    <string name="missing_poa_state_title">Hämta din förbrukningsdata!</string>
+    <string name="waiting_for_data_text">Greenely pingar ditt elnätsbolag. Vi notifierar dig när du kan börja följa din elanvändning</string>
+    <string name="waiting_for_data_text_no_friends">Medan du väntar på din data, bjud in dina vänner så att ni kan jämföra er elanvändnig!</string>
+    <string name="waiting_for_data_state_title">Väntar på data från ditt elnätsbolag…</string>
+    <string name="home_state_title">Jämför med vänner</string>
+    <string name="home_state_subtitle">Medan du väntar på din data, bjud in dina vänner så att ni kan jämföra er elanvändnig!</string>
+    <string name="button_compete_friend">Jämför!</string>
+
+
+    <string name="poa_category">POA</string>
+    <string name="poa_started">poa_started</string>
+    <string name="repeated_attempt">Repeated Attempt</string>
+    <string name="first_attempt">First Attempt</string>
+    <string name="poa_identified">poa_identified</string>
+    <string name="poa_with_meter">With Meter</string>
+    <string name="poa_without_meter">Without Meter</string>
+    <string name="poa_checked_address">poa_checked_address</string>
+    <string name="poa_signed">poa_signed</string>
+    <string name="poa_done">poa_done</string>
+    <string name="poa_pdf_preview">poa_opened_pdf</string>
+    <string name="solar_analysis_address">Solinstrålningsdata</string>
+    <string name="solor_analysis_address_text">Ange adressen på den bostad som du vill göra solcellsanalysen på.</string>
+    <string name="solar_analysis_roof_size_caption">Välj det alternativ som är närmast</string>
+    <string name="solar_analysis_roof_angle_caption">Välj det alternativ som är närmast</string>
+    <string name="address_title">Kostnadsfria offerter</string>
+    <string name="contact_info_email">E-postadress</string>
+    <string name="your_results">Ditt resultat</string>
+    <string name="solar_results_description">Se nedan hur mycket du kan spara genom att installera solpaneler.</string>
+    <string name="analysis_summery">Summering</string>
+    <string name="potential_saving">Potentiell besparing</string>
+    <string name="estimated_cost_after_solar_support">Kostnad efter solcellsstöd</string>
+    <string name="total_cost">Total vinst</string>
+    <string name="calculations">Beräkning</string>
+    <string name="yearly_production">Årsproduktion</string>
+    <string name="yearly_saving">Besparing per år</string>
+    <string name="payback_time">Återbetalningstid</string>
+    <string name="solar_panel_life_span">Solpanelernas livslängd</string>
+    <string name="solar_analysis_caption">Besparing i kronor utgår från SCBs genomsnittliga elkostnad på 1,38 kr/kWh för villor och radhus.</string>
+    <string name="latest_analysis">Tidigare resultat</string>
+    <string name="solar_analysis_tracking_category">Solar Analysis (SA)</string>
+    <string name="start_new_analysis">Gör en ny analys</string>
+    <string name="currency_symbol">kr</string>
+    <string name="close_message">Är du säker på att du vill avbryta?</string>
+    <string name="register_new_user">Kom igång</string>
+    <string name="already_have_account">Jag har redan ett konto</string>
+    <string name="introduction_value_1">Följ din elanvändning på timnivå</string>
+    <string name="introduction_value_2">Jämför med liknande hushåll</string>
+    <string name="introduction_value_3">Få varningar och rapporter</string>
+    <string name="introduction_value_4">Sänk dina elkostnader</string>
+    <string name="intro_tracking_catagory">Start</string>
+    <string name="login_tracking_catagory">Login</string>
+    <string name="household_profile">BOSTAD</string>
+    <string name="facility_setting_label">Bostadsprofil</string>
+    <string name="cancel_setup_household">AVBRYT</string>
+    <string name="electric_car_count">Hur många elbilar laddar du hemifrån?</string>
+    <string name="add_more_heating_systems">Har du fler värmesystem? Ange max 3</string>
+    <string name="electric_car">Elbil</string>
+    <string name="heating_systems">Värmesystem</string>
+    <string name="primary_heating_type">Primär</string>
+    <string name="secondary_heating_type">Ytterligare</string>
+    <string name="home_subheading2">mer elektricitet jämfört med <b>liknande hushåll</b>. </string>
+    <string name="home_subheading1">Ditt hushåll använt</string>
+    <string name="comparison_info_title">Du jämförs med följande parametrar</string>
+    <string name="resolution_days">Dagar</string>
+    <string name="resolution_weeks">Veckor</string>
+    <string name="resolution_months">Månader</string>
+    <string name="trend_resolution_days_title">Senaste 7 dagar</string>
+    <string name="trend_resolution_weeks_title">Senaste 7 veckor</string>
+    <string name="trend_resolution_months_title">Senaste 7 månader</string>
+    <string name="prices">Price</string>
+    <string name="consumption_per_month">Consumption</string>
+    <string name="kr">\u0020kr</string>
+    <string name="ore">\u0020öre</string>
+    <string name="noInvoiceText">Här kommer du snart kunna se dina fakturor. Ansök om E-faktura eller Autogiro via din internetbank!</string>
+    <string name="kr_per_month"> %d kr/mån</string>
+    <string name="coming_soon">KOMMER SNART</string>
+    <string name="retail_terms">Läs Greenelys&#160;<a href="">avtalsvillkor</a>.</string>
+    <string name="retail_info_title">Ägare av elkontrakt</string>
+    <string name="retail_info_description">För att ert hushåll ska bli elkund hos Greenely behöver den person som står på elnätsavtalet fylla i sitt personnummer nedan.</string>
+    <string name="retail_terms_accept">Jag godkänner Greenelys&#160;<a href="">avtalsvillkor</a></string>
+    <string name="retail_icon_title">Elavtal</string>
+    <string name="history_view_statistics">Visa statistik för dagar</string>
+    <string name="retail_error_we_will_investigate_and_return_to_you_soon">Vi utreder vad som gick fel och återkommer till dig inom kort</string>
+    <string name="retail_error_contact_us">Kontakta Greenelys support på</string>
+    <string name="retail_error_not_completed">Ditt leverantörsbyte kunde inte genomföras.</string>
+
+
+    <string name="poa_read_and_accept_terms">Vänligen läs och godkänn fullmakten.</string>
+
+    <string name="retail_read_and_accept_terms">Vänligen läs och acceptera avtalsvillkoren och fullmakten innan du tecknar ditt nya elavtal.</string>
+    <string name="retail_comming_soon">Kommer snart!</string>
+    <string name="cheap_and_sustainable">Billigt och hållbart!</string>
+    <string name="electricity_from_greenely">El från\nGreenely!</string>
+
+
+    <string name="retail_error_try_again_when_cause_is_investigated">Gör ett nytt försök när orsaken är utredd</string>
+    <string name="retail_error_please_check_the_person_number">Vänligen kontrollera personnumret</string>
+    <string name="retail_bankid_popup_title"><b>Mobilt BankID</b></string>
+    <string name="retail_bankid_description1">1. Öppna <b>BankID</b> i den mobil som är kopplat till angivet personnummer.</string>
+    <string name="retail_bankid_description2">2. Skriv in din säkerhetskod i <b>BankID</b> appen.</string>
+    <string name="retail_bankid_description3">3. Klicka på <b>Legitimera</b>.</string>
+    <string name="retail_bankid_description4">4. I appen kommer snart ett meddelande visa att du har registrerat dig som kund.</string>
+    <string name="retail_bankid_cancel">Avbryt BankID</string>
+    <string name="retail_power_of_attorney_accept">Jag ger Greenely&#160;<a href="">fullmakt</a> att hämta uppgifter från min nätägare och säga upp mitt befintliga elavtal</string>
+    <string name="poa_power_of_attorney_accept">Jag ger Greenely&#160;<a href="">fullmakt</a> att hämta uppgifter från min nätägare.</string>
+
+
+    <string name="retail_coming_soon_title">KOMMER SNART!</string>
+    <string name="retail_coming_soon_description">För dig som vill bidra till en hållbar planet och sänka elkostnaderna genom att vara aktiv i din elanvändning. Läs mer&#160;<a href="https://intercom.help/greenely/elhandel-och-elavtal/sa-fungerar-greenelys-smarta-elavtal"><font color="#222222"><b>här</b></font></a>.</string>
+    <string name="retail_coming_soon_description_2">Just nu har vi stängt ansökan för elavtalet, men med en inbjudningskod får du exklusiv tillgång redan idag!</string>
+    <string name="retail_become_customer_title">El från Greenely!</string>
+    <string name="retail_become_customer_description">Med Greenelys abonnemang köper du förnyelsebar el märkt med Bra Miljöval till inköpspris. Priset varierar per timme och vi lägger inte på någon marginal. Därmed tjänar vi inget på att du förbrukar mer. Vi tar istället endast en fast avgift på\u0020</string>
+    <string name="retail_become_customer_description2">I appen får du full koll på elpriset, din förbrukning och kan administrera ditt abonnemang.</string>
+    <string name="have_invitation_code_label">Jag har en inbjudningskod</string>
+
+
+    <string name="retail_coming_soon_i_am_interested_button">Jag är intresserad!</string>
+    <string name="retail_become_customer_start_today_button">Bli elkund idag!</string>
+    <string name="retail_interest_report_sent">Intresseanmälan skickad!</string>
+    <string name="retail_action_interrupted">Åtgärden avbruten.</string>
+    <string name="phone_number_must_be_10_digits">Mobilnumret måste bestå av 10 siffror</string>
+    <string name="retail_support_email_subject">Greenely elavtal</string>
+    <string name="change_household_parameters">Ändra hushållsparametrar</string>
+    <string name="reonboarding_change_confirmation">Vill du ändra något bland dina hushållsparametrar? Notera att din jämförelse kan påverkas.</string>
+    <string name="reonboarding_your_househoald_parameters_have_been_updated">Dina hushållsparametrar har uppdaterats.</string>
+    <string name="verify_information">Bekräfta uppgifterna</string>
+    <string name="please_confirm_information">Var god att slutligen bekräfta att de uppgifter du har uppgett stämmer.</string>
+    <string name="personal_number_label">Personnummer</string>
+    <string name="full_name_label">Namn</string>
+    <string name="full_name_owner_of_electricity">Namn (ägare av elavtalet)</string>
+    <string name="postal_address_label">Postadress</string>
+    <string name="facility_id_label">Anläggningsid</string>
+    <string name="no_prices_data_available">Just nu finns inga prisuppgifter tillgängliga. Elpriserna för morgondagen uppdateras dagligen mellan kl. 16-18</string>
+    <string name="electric_agreement_title">Greenelys smarta elavtal </string>
+    <string name="you_pay_label">DU BETALAR</string>
+    <string name="add_activation_code">Lägg till inbjudningskod</string>
+    <string name="continue_label">Fortsätt</string>
+    <string name="continue_label_2">Se vårt elpris</string>
+
+    <string name="redeem_code_button_label">Registrera inbjudningskod</string>
+    <string name="no_tax_label">Ingen bindningstid. Fritt fram att prova.</string>
+    <string name="all_cost_included_label">Alla kostnader redovisas inkl. moms</string>
+    <string name="redeem_code_label">Fått en inbjudan till Greenelys elavtal?</string>
+
+
+    <string name="redeem_code_hint">Inbjudningskod</string>
+
+    <string name="redeem_code_description">Med en inbjudningskod kan du ta exklusiv del av Greenelys elavtal redan idag. Har du blivit inbjuden av en vän som redan är kund hos oss så får du dessutom %s kr i rabatt på första fakturan!</string>
+    <string name="retail_invite_screen_label">Bjud in vänner och få %s kr!</string>
+    <string name="retail_invite_description">När din vän blir elkund hos Greenely får ni %s kr vardera.</string>
+    <string name="retail_invite_detail_link_label">Så fungerar inbjudningar</string>
+    <string name="retail_invite_button_label">Bjud in vänner</string>
+    <string name="referral_balance_label">Tillgänglig rabatt:</string>
+    <string name="your_code_label">Din kod: </string>
+    <string name="copy_label">Kopiera</string>
+
+
+    <string name="invite_friends_title">Så fungerar inbjudningar</string>
+    <string name="invite_friends_banner_title">Bjud in vänner!</string>
+    <string name="invite_friends_banner_sub_title">Ge och få %s kr för varje vän du värvar!</string>
+
+    <string name="retail_contract_type_label">Rådande pris på elbörsen</string>
+    <string name="per_month_fee_label">Månadsavgift</string>
+    <string name="offer_label_price_summary">Erbjudande*</string>
+    <string name="retail_discount_label">Erhållen rabatt</string>
+    <string name="use_activation_code_setting_label">Använd injudningskod</string>
+    <string name="use_activation_code_setting_sub_label">Få %s kr i rabatt!</string>
+    <string name="invalid_promocode">Detta är inte en giltig inbjudningskod</string>
+
+    <string name="invite_friend_setting_label">Bjud in vänner</string>
+    <string name="invite_friend_setting_sub_label">Få %s kr/person!</string>
+    <string name="referral_code_share_subject">Få %s kr rabatt på din nästa elfaktura</string>
+    <string name="copy_code_message">Koden kopierad</string>
+
+    <string name="greenely_price_label">GREENELYS AVTAL</string>
+    <string name="market_price_label">RÖRLIGT AVTAL</string>
+
+
+    <string name="invite_friends_qa"> Varje gång en av dina vänner registrerar sig med din inbjudningskod får hen %s kr i avdrag på sin första faktura.\n\nNär första fakturan är betald får även du %s kr i rabatt som automatiskt dras av på nästkommande fakturor.
+        \n\nOm du har bjudit in flera vänner och samlat ihop en rabatt som överstiger beloppet på din nästkommande faktura, så sparas rabatten automatiskt till månaden därpå.
+        \n\nDin rabatt sparas i 12 månader från det datum då rabatten erhölls.</string>
+
+    <string name="avg_price_cost_analysis">Snittpris %s öre/kWh</string>
+
+    <string name="price_lable">Elpris</string>
+    <string name="usage_label_chart">Elanvändning</string>
+    <string name="temperature_label_chart">Temperatur</string>
+    <string name="min_usage_label_chart">Min elanvänding</string>
+
+
+    <string name="greenely_price_label_chart">Vårt elpris</string>
+    <string name="market_price_label_chart">Rörligt avtal</string>
+    <string name="cost_analysis_info_title">Hur vi räknar ut kostnadsanalysen</string>
+    <string name="cost_analysis_link_label">Mer om Greenelys elavtal här.</string>
+    <string name="cost_analysis_description">Beräkningen för Greenelys elavtal görs genom att multiplicera din elanvändning varje timme med det rådande elpriset för respektive timme under månaden. Därefter summeras samtliga timmar under månaden vilket blir din unika kostnad för Greenelys elavtal. Vi räknar på samma sätt fram en kostnad för ett rörligt avtal där elpriset är detsamma
+       under månadens gång tillsammans med det genomsnittliga marknadspåslaget på 2.5 öre/kWh.\n\nBeräkningen innehåller inte månadsavgifter eller ev.
+       påslag för miljö och elcertifikat då dessa är svåra att uppskatta eller erbjuds inte av samtliga elleverantörer.
+</string>
+
+    <string name="retail_signup_tc">- Timdata snabbare
+       \n- El till självkostnadspris/kWh
+       \n- Förnyelsebar el märkt med Bra Miljöval
+       \n- Premium-funktioner i appen</string>
+
+
+    <string name="retail_agreement_link_label">Läs mer om avtalet här.</string>
+    <string name="take_care_label">Passa på!</string>
+    <string name="replace_power_label">Byt elavtal och få:</string>
+    <string name="retail_info_dialog_title">Greenely elavtal</string>
+    <string name="retail_info_dialog_subtitle">För dig som vill bidra till en hållbar planet och sänka elkostnaderna.</string>
+
+
+    <string name="retail_info_dialog_row_1_title">Smart elavtal</string>
+    <string name="retail_info_dialog_row_1_subtitle">Betala det elpris som råder på elbörsen.</string>
+
+    <string name="retail_info_dialog_row_2_title">Slipp dyra överraskningar</string>
+    <string name="retail_info_dialog_row_2_subtitle">Uppdatering varje dag med hur mycket du gjort av med hittills.</string>
+
+    <string name="retail_info_dialog_row_3_title">Följ elpriset</string>
+    <string name="retail_info_dialog_row_3_subtitle">Få tillgång till morgondagens elpriser dygnet innan.</string>
+
+    <string name="retail_info_dialog_row_4_title">Smart digital hantering</string>
+    <string name="retail_info_dialog_row_4_subtitle">Få dina fakturor i appen och betala med e-faktura och autogiro.</string>
+
+    <string name="retail_info_dialog_row_5_title">Ingen bindningstid</string>
+    <string name="retail_info_dialog_row_5_subtitle">Är du inte nöjd kan du lätt byta tillbaka.</string>
+    <string name="close_label">Stäng</string>
+    <string name="residence_address_label">Bostadens adress</string>
+    <string name="fill_details_label">Fyll i uppgifterna nedan för den bostad som du vill hämta data för.</string>
+    <string name="offer_label">Erbjudande</string>
+
+    <string name="retail_start_description">Bidra till en hållbar planet och sänk elkostnaderna genom att vara medveten om elpriset</string>
+    <string name="no_fixation_label">Ingen bindningstid</string>
+
+    <string name="retail_start_second_part_title">Visste du att elpriset varierar varje timme på elbörsen?  </string>
+    <string name="retail_start_second_part_subtitle">Majoriteten av svenska hushåll betalar dock fortfarande ett <font color="#FFFFFF"><b>genomsnittspris</b></font>. </string>
+
+
+    <string name="retail_start_third_part_title">Med Greenely betalar du exakt det pris som råder på börsen</string>
+    <string name="retail_start_third_part_subtitle">Inga mellanhänder = Inga påslag.
+        \nFölj elpriset live och sänk
+        \nelkostnaderna. </string>
+
+
+    <string name="retail_start_fourth_view_title">Med vårt elavtal får du unika premiumfunktioner så att du får full elkoll:</string>
+
+    <string name="retail_start_fourth_view_row_1_title">Slipp dyra överraskningar</string>
+    <string name="retail_start_fourth_view_row_1_subtitle">Uppdateringar varje dag med hur mycket du förbrukat hittills</string>
+
+    <string name="retail_start_fourth_view_row_2_title">Följ elpriset</string>
+    <string name="retail_start_fourth_view_row_2_subtitle">Få tillgång till morgondagens elpriset dygnet innan</string>
+
+    <string name="retail_start_fourth_view_row_3_title">Samla allt på ett ställe</string>
+    <string name="retail_start_fourth_view_row_3_subtitle">Få dina fakturor i appen och betala med e-faktura eller autogiro</string>
+
+    <string name="retail_start_fourth_view_row_4_title">Ingen bindningstid</string>
+    <string name="retail_start_fourth_view_row_4_subtitle">Byt till Greenely på 1 minut - är du inte nöjd kan du enkelt byta tillbaka</string>
+
+    <string name="retail_start_title">Greenelys\nsmarta elavtal </string>
+
+    <string name="discount_for_months_label">0 kr i %d mån</string>
+    <string name="discount_for_months_price_summary">*0 kr/mån i avgift i %d månader, därefter %s kr/mån</string>
+    <string name="notification_settings_label">Notifikationer</string>
+    <string name="guidance_settings_label">Erbjudanden &amp; artiklar</string>
+    <string name="all_notification_label">Notifikationer</string>
+    <string name="general_label">Generellt</string>
+    <string name="weekly_report_label">Veckorapport</string>
+    <string name="monthly_report_label">Månadsrapport</string>
+    <string name="electricity_label">Elhandel</string>
+    <string name="tomorrow_avg_price_label">Morgondagens snittspris</string>
+    <string name="high_low_price_label">Högt och lågt elpris</string>
+    <string name="overdue_invoice_label">Ny och/eller förfallen faktura</string>
+    <string name="enable_retail_message">Dessa notifikationer, och fler funktioner, blir tillgängliga när du tecknar vårt elavtal</string>
+
+    <string name="password_missmatch_title">Inte matchande lösenord</string>
+    <string name="password_missmatch_message">Ditt nya lösenord matchar inte</string>
+
+    <string name="save_label">Spara</string>
+
+    <string name="retail_promo_title">Greenelys elkunder sparar i snitt 832 kr på sin elfaktura</string>
+
+
+    <string name="total_label">Totalt</string>
+    <string name="temperature_label">Temperatur</string>
+    <string name="price_label">Elpris</string>
+    <string name="consumption_header_text">Total elanvändning - %s</string>
+    <string name="temperature_header_text">Elanvändning vs temperatur - %s</string>
+    <string name="price_header_text">Elanvändning vs elpris från Greenely - %s</string>
+
+    <string name="history_resolution_months">Månad</string>
+    <string name="history_resolution_days">Dagar</string>
+    <string name="kwh_resolution_kwh">kWh</string>
+    <string name="kwh_resolution_kwhM2">kWh/m2</string>
+    <string name="compete_friend_titleTxt">Jämför med dina vänner!</string>
+    <!--
+        <string name="activityCompeteFriend_infoTxt">Genom att dela länken du får fram genom den gröna knappen “lägg till en vän” kan du visa dina vänner din data och se dina vänners data. Denna information kommer ni dela med varandra:\n\n   \n* E-postadress  \n* Förnamn  \n* Månadsdata, Veckodata  \n* Inmatade hushållsuppgifter   \n\nDu har alltid möjlighet att ta bort kopplingen genom att klicka på personen i listan och därefter välja “Ta bort vän”.   \n\nVi uppmanar dig att inte dela länken helt fritt, utan enbart de till du vill jämföra din data emot.</string>
+    -->
+    <string name="activityCompeteFriend_infoTxt">Genom knappen “bjud in en vän” bjuder du in dina vänner till Greenely-appen. Det gör det möjligt för dig och dina vänner att se och jämföra varandras data.\n\nDenna information kommer ni dela med varandra:\n* E-postadress\n* Förnamn\n* Månadsdata och veckodata\n* Inmatade hushållsuppgifter\n\nDu kan alltid ta bort kopplingen genom att klicka på personen i listan och välja “Ta bort vän”.\n\nVi uppmanar dig att enbart dela länken med dem personerna som du vill jämföra din data med.
+</string>
+    <string name="iniviteFriendFragment_lagg_till_en_van">Lägg till en vän</string>
+    <string name="welcomeActivity_subtitle">Se din elförbrukning gratis och jämför vem som är mest energismart!</string>
+    <string name="welcomeActivity_bottomText">Det är gratis att komma igång!</string>
+    <string name="welcomeActivity_title">Kan du bli bättre än\n</string>
+    <string name="welcomeActivity_titleExpired">Kan du bli bättre än din vän?</string>
+    <string name="welcomeActivity_title_new_user">Du vet väl att du äger din egna eldata?</string>
+    <string name="welcomeActivity_subtitle_new_user">Med hjälp av Greenely kan du kostnadsfritt hämta data på timnivå och lära dig hur du kan bli mer energismart.</string>
+    <string name="friends_resolution_week">VECKA</string>
+    <string name="competeFriend_onboardInfoTxt"><font color="#23b669">Hämta din eldata</font> nu så att ni \nkan se vem som är mest energismart!</string>
+    <string name="competeFriend_notNowTxt">Inte nu</string>
+    <string name="competeFriend_onboardTitleTxt">Klart!</string>
+    <string name="competeFriend_rankingListTitle">MINA VÄNNER</string>
+    <string name="share_url_text">Vem är mest energismart?</string>
+    <string name="competeFriendList_shareButtonTxt">Bjud in en vän</string>
+    <string name="profile_uploadPhotoLabel">Ladda upp ett foto</string>
+    <string name="updateProfileFragment_title">&#160;profil</string>
+    <string name="switchProfile_dialogTitle">AKTIVT KONTO</string>
+    <string name="switchProfile_accontListTitle">ANDRA KONTON</string>
+    <string name="itemAccountFooter_addAccountTxt">LÄGG TILL konto</string>
+    <string name="switchProfileDialog_footerText">Du kan ha flera Greenely-konton på den här enheten. Växla mellan dem för att se data för fler bostäder.</string>
+    <string name="solarAnalysis_radioGrpTitleText">Planerar du att installera solceller inom 6 månader?</string>
+    <string name="dialogSolarAnalysis_title">Är du säker på att du vill bli kontaktad av upp till 4 av våra partners för inköp av solcellspaket?</string>
+    <string name="solarAnalysis_sendBtnTxt">Skicka</string>
+
+</resources>

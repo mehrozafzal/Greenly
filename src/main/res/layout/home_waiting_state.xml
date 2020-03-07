@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+    <data>
+
+        <variable
+            name="homeModel"
+            type="greenely.greenely.home.models.HomeModel" />
+
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:paddingTop="16dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:id="@+id/root"
+        android:layout_height="wrap_content"
+       >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LightSanSerif"
+            android:textColor="@color/black_1"
+            android:text="@{homeModel.stateTitle}"
+            android:textSize="@dimen/size_18_sp"
+            tools:text="Augusti" />
+
+        <com.skyfishjy.library.RippleBackground
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:id="@+id/rippleContainer"
+            app:rb_color="@color/green_1"
+            app:rb_radius="20dp"
+            app:rb_strokeWidth="10dp"
+            app:rb_type="strokeRipple"
+            app:rb_rippleAmount="4"
+            app:rb_duration="3000"
+            app:rb_scale="3.5">
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/waitingIcon"
+                android:layout_marginRight="@dimen/size_20_dp"
+                android:layout_marginBottom="@dimen/size_20_dp"
+                android:layout_marginLeft="@dimen/size_20_dp"
+                app:srcCompat="@drawable/greenely_icon_ripple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </com.skyfishjy.library.RippleBackground>
+
+
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:text="@{homeModel.extraText}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_30_dp"
+            android:layout_marginTop="@dimen/size_10_dp"
+            android:layout_marginEnd="@dimen/size_30_dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LightSanSerif"
+            android:textColor="@color/black_1"
+            android:lineSpacingExtra="2dp"
+            android:textSize="@dimen/size_16_sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/percentage"
+            tools:text="Greenely pingar ditt elnätsbolag. Vi notifierar dig när du kan börja följa din elanvändningf" />
+
+
+
+
+
+    </LinearLayout>
+</layout>

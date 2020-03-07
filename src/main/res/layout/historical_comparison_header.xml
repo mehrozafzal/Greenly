@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+    <data>
+
+        <variable
+            name="homeModel"
+            type="greenely.greenely.home.models.HomeModel" />
+
+        <import type="android.view.View" />
+    </data>
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.LightSanSerif"
+            android:textColor="@color/black_1"
+            android:text='@{homeModel.historicalComparisonModel.title,default="--"}'
+            android:textSize="@dimen/size_18_sp"
+            tools:text="Augusti" />
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/size_10_dp"
+            android:layout_height="85dp">
+            <TextView
+                android:id="@+id/percentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_10_dp"
+                android:textColor="@color/black_1"
+                android:gravity="top"
+                android:text='@{homeModel.historicalComparisonModel.consumptionDifference}'
+                android:textAppearance="@style/TextAppearance.BoldSanSerif"
+                android:textSize="60sp"
+                android:layout_gravity="bottom"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="2 451" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_gravity="bottom"
+                android:textColor="@color/black_1"
+                android:textAppearance="@style/TextAppearance.BoldSanSerif"
+                android:textSize="40sp"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintLeft_toRightOf="@id/percentage"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:text="@string/kWh" />
+
+        </LinearLayout>
+
+        <TextView
+            android:text='@{homeModel.historicalComparisonModel.consumptionDescription,default=""}'
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_30_dp"
+            android:layout_marginEnd="@dimen/size_30_dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textAppearance="@style/TextAppearance.LightSanSerif"
+            android:textColor="@color/grey3"
+            android:lineSpacingExtra="2dp"
+            android:textSize="@dimen/size_18_sp"
+            tools:text="Mindre el jul 2017 - idag jämfört med liknande hushåll " />
+
+
+    </LinearLayout>
+</layout>

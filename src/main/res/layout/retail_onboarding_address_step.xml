@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="greenely.greenely.retailonboarding.ui.RetailOnboardingViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:stateListAnimator="@animator/appbar_not_elevated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_arrow_back_green" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ScrollView
+            android:id="@+id/scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/button_next"
+            android:layout_marginTop="?attr/actionBarSize">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:paddingTop="@dimen/size_5_dp"
+                android:paddingBottom="16dp">
+
+
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:text="Ägare av elavtal"
+                    android:textAppearance="@style/TextAppearance.SubtitleBold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start"
+                    android:paddingStart="25dp"
+                    android:paddingEnd="25dp"
+                    android:text="För att bli elkund hos Greenely behöver den person som står på elnätsavtalet fylla i uppgifterna nedan."
+                    android:textAppearance="@style/TextAppearance.PlaceHolder"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/personalNumberTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="@string/personal_number"
+                    android:paddingTop="3dp"
+                    android:visibility="@{ !viewModel.customerInfoInput.isFromPoaProcess ? View.VISIBLE : View.GONE}"
+                    app:errorMsg="@{viewModel.customerInfoErrors.personalNumberError}"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView41">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/personalNumberTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="123456789 0-"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="12"
+                        android:onTextChanged="@{viewModel.validationTextWatcher}"
+                        android:privateImeOptions="nm"
+                        android:singleLine="true"
+                        android:text="@={viewModel.customerInfoInput.personalNumber}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/streetAddressTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="Gatuadress"
+                    android:visibility="gone"
+                    app:errorMsg="@{viewModel.customerInfoErrors.addressError}"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/personalNumberTextInputLayout"
+                    tools:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/street_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:inputType="textNoSuggestions|textFilter"
+                        android:onTextChanged="@{viewModel.validationTextWatcher}"
+                        android:privateImeOptions="nm"
+                        android:singleLine="true"
+                        android:text="@={viewModel.customerInfoInput.address}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/postNumberTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="Postnummer"
+                    android:visibility="gone"
+                    app:errorMsg="@{viewModel.customerInfoErrors.postalCodeError}"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/streetAddressTextInputLayout"
+                    tools:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/postNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:digits="123456789 0"
+                        android:imeOptions="actionNext"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:onTextChanged="@{viewModel.validationTextWatcher}"
+                        android:privateImeOptions="nm"
+                        android:singleLine="true"
+                        android:text="@={viewModel.customerInfoInput.postalCode}" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/cityTextInputLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="19dp"
+                    android:layout_marginEnd="25dp"
+                    android:hint="Postort"
+                    android:visibility="gone"
+                    app:errorMsg="@{viewModel.customerInfoErrors.postalRegionError}"
+                    app:hintAnimationEnabled="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/postNumberTextInputLayout"
+                    tools:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/city"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="textNoSuggestions|textFilter"
+                        android:lines="1"
+                        android:maxLines="1"
+                        android:onTextChanged="@{viewModel.validationTextWatcher}"
+                        android:privateImeOptions="nm"
+                        android:singleLine="true"
+                        android:text="@={viewModel.customerInfoInput.postalRegion}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_60_dp"
+            android:textSize="@dimen/size_18_sp"
+            android:textAppearance="@style/TextAppearance.BoldSanSerif"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:background="@color/new_green"
+            android:text="@string/proceed" />
+
+    </RelativeLayout>
+</layout>

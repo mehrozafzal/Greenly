@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:cardBackgroundColor="@android:color/transparent">-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="15dp">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="24dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+
+                    android:paddingBottom="30dp">
+
+                    <ImageView
+                        android:id="@+id/close"
+                        android:layout_width="34dp"
+                        android:layout_height="34dp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_close_green" />
+
+                    <TextView
+                        android:id="@+id/label1"
+                        android:layout_width="0dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/retail_info_dialog_title"
+                        android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold"
+                        android:textColor="@color/black_1"
+                        android:textSize="30sp"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/close"
+                         />
+
+
+                    <TextView
+                        android:id="@+id/subtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/retail_info_dialog_subtitle"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="15sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toLeftOf="@id/close"
+                        app:layout_constraintTop_toBottomOf="@id/label1" />
+
+
+                    <LinearLayout
+                        android:id="@+id/row1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/retail_dialog_list_row_margin_top"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/subtitle">
+
+                        <ImageView
+                            android:id="@+id/greenTick1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="2dp"
+                            app:srcCompat="@drawable/green_tick" />
+
+                        <TextView
+                            android:id="@+id/row1Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/retail_dialog_list_label_title_margin_start"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/retail_info_dialog_row_1_title"
+                            android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold"
+                            android:textColor="@color/black_1"
+                            android:textSize="@dimen/retail_dialog_list_label_title_size" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/row1Subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/retail_dialog_list_label_subtitle_margin_start"
+                        android:layout_marginEnd="24dp"
+                        android:gravity="left"
+                        android:text="@string/retail_info_dialog_row_1_subtitle"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="@dimen/retail_dialog_list_label_subtitle_size"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row1" />
+
+
+                    <LinearLayout
+                        android:id="@+id/row2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/retail_dialog_list_row_margin_top"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row1Subtitle">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="2dp"
+                            app:srcCompat="@drawable/green_tick" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/retail_dialog_list_label_title_margin_start"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/retail_info_dialog_row_2_title"
+                            android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold"
+                            android:textColor="@color/black_1"
+                            android:textSize="@dimen/retail_dialog_list_label_title_size" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/row2Subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/retail_dialog_list_label_subtitle_margin_start"
+                        android:layout_marginEnd="24dp"
+                        android:gravity="left"
+                        android:text="@string/retail_info_dialog_row_2_subtitle"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="@dimen/retail_dialog_list_label_subtitle_size"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row2" />
+
+
+                    <LinearLayout
+                        android:id="@+id/row3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/retail_dialog_list_row_margin_top"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row2Subtitle">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="2dp"
+                            app:srcCompat="@drawable/green_tick" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/retail_dialog_list_label_title_margin_start"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/retail_info_dialog_row_3_title"
+                            android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold"
+                            android:textColor="@color/black_1"
+                            android:textSize="@dimen/retail_dialog_list_label_title_size" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/row3Subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/retail_dialog_list_label_subtitle_margin_start"
+                        android:layout_marginEnd="24dp"
+                        android:gravity="left"
+                        android:text="@string/retail_info_dialog_row_3_subtitle"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="@dimen/retail_dialog_list_label_subtitle_size"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row3" />
+
+
+                    <LinearLayout
+                        android:id="@+id/row4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/retail_dialog_list_row_margin_top"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row3Subtitle">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="2dp"
+                            app:srcCompat="@drawable/green_tick" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/retail_dialog_list_label_title_margin_start"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/retail_info_dialog_row_4_title"
+                            android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold"
+                            android:textColor="@color/black_1"
+                            android:textSize="@dimen/retail_dialog_list_label_title_size" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/row4Subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/retail_dialog_list_label_subtitle_margin_start"
+                        android:layout_marginEnd="24dp"
+                        android:gravity="left"
+                        android:text="@string/retail_info_dialog_row_4_subtitle"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="@dimen/retail_dialog_list_label_subtitle_size"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row4" />
+
+
+                    <LinearLayout
+                        android:id="@+id/row5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/retail_dialog_list_row_margin_top"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row4Subtitle">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="2dp"
+                            app:srcCompat="@drawable/green_tick" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/retail_dialog_list_label_title_margin_start"
+                            android:layout_marginEnd="16dp"
+                            android:text="@string/retail_info_dialog_row_5_title"
+                            android:textAppearance="@style/TextAppearance.MediumSanSerif.Bold"
+                            android:textColor="@color/black_1"
+                            android:textSize="@dimen/retail_dialog_list_label_title_size" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/row5Subtitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/retail_dialog_list_label_subtitle_margin_start"
+                        android:layout_marginEnd="24dp"
+                        android:gravity="left"
+                        android:text="@string/retail_info_dialog_row_5_subtitle"
+                        android:textAppearance="@style/TextAppearance.LightSanSerif"
+                        android:textColor="@color/grey3"
+                        android:textSize="@dimen/retail_dialog_list_label_subtitle_size"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/row5" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </androidx.cardview.widget.CardView>
+
+    <!--</android.support.v7.widget.CardView>-->
+
+</layout>
